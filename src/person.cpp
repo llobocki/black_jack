@@ -29,6 +29,10 @@ Person::Person()
 //     card_counter = 0;
 }
 
+Person::~Person(){
+
+}
+
 
 int Person::get_cards() const
 {
@@ -55,7 +59,7 @@ void Person::reset()
 
 void Person::add(const Card card)
 {
-    card.print();
+//    card.print(); // tylko do gry, nie do symulacji, trzeba to inaczej zaplanować
 
 //     actual += card.cards_counter();
 

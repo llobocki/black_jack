@@ -20,6 +20,8 @@ private:
 
 public:
     Person();
+    virtual ~Person();
+
 
     int get_cards() const;
     bool get_black_jack() const;

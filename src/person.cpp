@@ -148,7 +148,7 @@ Card Person::back_card() {
 }
 
 bool Person::split_aces() {
-	return (cards[0].get_value() == 1 && cards[1].get_value() == 1) ?
+	return (cards[0].get_value() == 1 && cards[1].get_value() == 1 && split == 0 && cards.size() == 2) ?
 			true : false;
 }
 

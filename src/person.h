@@ -1,56 +1,50 @@
-
 #ifndef PERSON_H
 #define PERSON_H
 
 #include "card.h"
 #include "vector"
 
-class Person
-{
+class Person {
 private:
-    std::vector<Card> cards;
-    int value;
+	std::vector<Card> cards;
+	int value;
 
-    int split;
+	int split;
 
-    bool black_jack;
-    bool soft_ace;
+	bool black_jack;
+	bool soft_ace;
 
 //     int card_counter;
 
 public:
-    Person();
-    virtual ~Person();
+	Person();
+	virtual ~Person();
 
+	int get_cards() const;
+	bool get_black_jack() const;
 
-    int get_cards() const;
-    bool get_black_jack() const;
+	void only_21();
 
-    void only_21();
+	void reset();
 
-    void reset();
+	void add(const Card card);
+	void add_no_print(const Card card);
+	void add_basic(const Card card);
+	void add_hi_low_I(const Card card, int &actual);
 
-    void add(const Card card);
-    void add_no_print(const Card card);
-    void add_basic(const Card card);
-    void add_hi_low_I(const Card card, int &actual);
+	virtual void print();
 
+	bool can_split();
+	int get_split() const;
 
-    virtual void print();
+	bool split_aces();
 
-    bool can_split();
-    bool split_aces();
+	bool ace_soft() const;
 
-    int get_size() const;
+	void set_split();
+	Card back_card();
 
-    void set_split();
-    int get_split() const;
-
-    Card back_card();
-
-    bool ace_soft() const;
-
-
+	int get_size() const;
 
 };
 

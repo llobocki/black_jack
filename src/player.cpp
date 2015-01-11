@@ -3,13 +3,13 @@
 //#include "player.h"
 //#include "iostream"
 //
-//Player::Player() :Person()
+//Player::Player() :Person_old()
 //{
 //    bet = 10;
 //}
 //
 //
-//Player::Player(int b) :Person()
+//Player::Player(int b) :Person_old()
 //{
 //    bet = b;
 //}
@@ -18,7 +18,7 @@
 //{
 //
 //    std::cout << "\t\t\tgracz: ";
-//    Person::print();
+//    Person_old::print();
 //
 //
 //}

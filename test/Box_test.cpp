@@ -8,7 +8,7 @@
 #include "../src/Box.h"
 
 #include <unittest++/UnitTest++.h>
-#include "../src/Card.h"
+//#include "../src/Card.h"
 
 SUITE(Box) {
 

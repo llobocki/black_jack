@@ -1,10 +1,10 @@
-//#ifndef PERSON_H
-//#define PERSON_H
+//#ifndef Person_old_OLD_H
+//#define Person_old_OLD_H
 //
 //#include "vector"
 //#include "Card.h"
 //
-//class Person {
+//class Person_old {
 //private:
 //	std::vector<Card> cards;
 //	int value;
@@ -17,8 +17,8 @@
 ////     int card_counter;
 //
 //public:
-//	Person();
-//	virtual ~Person();
+//	Person_old();
+//	virtual ~Person_old();
 //
 //	int get_cards() const;
 //	bool get_black_jack() const;
@@ -48,4 +48,4 @@
 //
 //};
 //
-//#endif // PERSON_H
+//#endif // Person_old_H

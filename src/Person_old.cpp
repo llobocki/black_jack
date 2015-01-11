@@ -1,4 +1,4 @@
-//#include "person.h"
+//#include "Person_old.h"
 //#include "iostream"
 //
 //void use_soft_ace(bool &soft_ace, int &cards) {
@@ -15,7 +15,7 @@
 //	}
 //}
 //
-//Person::Person() {
+//Person_old::Person_old() {
 //	value = 0;
 //
 //	split = 0;
@@ -25,20 +25,20 @@
 ////     card_counter = 0;
 //}
 //
-//Person::~Person() {
+//Person_old::~Person_old() {
 //
 //}
 //
-//int Person::get_cards() const {
+//int Person_old::get_cards() const {
 //	return value;
 //}
 //
-//bool Person::get_black_jack() const {
+//bool Person_old::get_black_jack() const {
 //	return black_jack;
 //
 //}
 //
-//void Person::reset() {
+//void Person_old::reset() {
 //	cards.clear();
 //	value = 0;
 ////     two_cards = 0;
@@ -47,7 +47,7 @@
 //	black_jack = false;
 //}
 //
-//void Person::add(const Card card) {
+//void Person_old::add(const Card card) {
 ////    card.print(); // tylko do gry, nie do symulacji, trzeba to inaczej zaplanować
 //
 ////     actual += card.cards_counter();
@@ -67,7 +67,7 @@
 //	use_ace(soft_ace, value);
 //}
 //
-//// void Person::add_no_print(const Card card)
+//// void Person_old::add_no_print(const Card card)
 //// {
 ////     cards.push_back(card);
 ////
@@ -84,7 +84,7 @@
 ////     use_ace(soft_ace,value);
 //// }
 //
-//void Person::add_basic(const Card card) {
+//void Person_old::add_basic(const Card card) {
 //	cards.push_back(card);
 //
 //	value += card.get_value();
@@ -98,7 +98,7 @@
 //	use_ace(soft_ace, value);
 //}
 //
-//void Person::add_hi_low_I(const Card card, int& actual) {
+//void Person_old::add_hi_low_I(const Card card, int& actual) {
 //	actual += card.cards_counter();
 //
 //	cards.push_back(card);
@@ -115,7 +115,7 @@
 //
 //}
 //
-//void Person::print() {
+//void Person_old::print() {
 //	if (value < 22)
 //		std::cout << value << '\n';
 //	else
@@ -123,39 +123,39 @@
 //
 //}
 //
-//bool Person::can_split() {
+//bool Person_old::can_split() {
 //	return (cards.size() == 2 && (cards[0].get_value() == cards[1].get_value())
 //			&& split < 4) ? true : false;
 //}
 //
-//int Person::get_size() const {
+//int Person_old::get_size() const {
 //	return cards.size();
 //}
 //
-//int Person::get_split() const {
+//int Person_old::get_split() const {
 //	return split;
 //}
 //
-//void Person::set_split() {
+//void Person_old::set_split() {
 //	split++;
 //}
 //
-//Card Person::back_card() {
+//Card Person_old::back_card() {
 //	Card c = cards.back();
 //	value -= c.get_value();
 //	cards.pop_back();
 //	return c;
 //}
 //
-//bool Person::split_aces() {
+//bool Person_old::split_aces() {
 //	return (cards[0].get_value() == 1 && cards[1].get_value() == 1 && split == 0 && cards.size() == 2) ?
 //			true : false;
 //}
 //
-//void Person::only_21() {
+//void Person_old::only_21() {
 //	black_jack = false;
 //}
 //
-//bool Person::ace_soft() const {
+//bool Person_old::ace_soft() const {
 //	return soft_ace;
 //}

@@ -7,7 +7,7 @@
 //
 //
 //
-//class Player : public Person
+//class Player : public Person_old
 //{
 //private:
 //    int bet;

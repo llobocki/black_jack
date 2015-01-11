@@ -6,10 +6,10 @@
 #include "vector"
 #include "iostream"
 #include "algorithm"
-#include "card.h"
 #include "ctime"
 #include "cstdlib"
 
+#include "Card.h"
 #include "dealer.h"
 #include "player.h"
 #include "gambler.h"

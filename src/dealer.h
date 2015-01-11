@@ -1,5 +1,5 @@
 
-#include "card.h"
+#include "Card.h"
 #include "person.h"
 
 #ifndef DEALER_H

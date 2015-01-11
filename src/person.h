@@ -1,8 +1,8 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include "card.h"
 #include "vector"
+#include "Card.h"
 
 class Person {
 private:

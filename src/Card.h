@@ -1,6 +1,8 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <tuple>
+
 class Card
 {
 public:
@@ -13,13 +15,15 @@ public:
     Card(Color c, Value v);
     Card();
     Card(const Card &c);
+    virtual ~Card();
     int get_value() const;
     int get_colour() const;
-    void print() const;
+//    void print() const;
+//
+//    int cards_counter() const;
+//
+//    int get_num() const;
 
-    int cards_counter() const;
-
-    int get_num() const;
 };
 
 #endif // CARD_H

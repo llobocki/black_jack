@@ -1,6 +1,5 @@
 
-#include "card.h"
-// #include "option.h"
+#include "Card.h"
 #include "person.h"
 
 #ifndef PLAYER_H

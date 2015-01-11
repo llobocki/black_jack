@@ -4,17 +4,17 @@
 #include <vector>
 // #include <algorithm>
 
-#include "card.h"
 #include "player.h"
 #include "dealer.h"
 #include "game.h"
 #include "gambler.h"
 
 #include <unittest++/UnitTest++.h>
+#include "Card.h"
 
-int main(){
-	return UnitTest::RunAllTests();
-}
+//int main(){
+//	return UnitTest::RunAllTests();
+//}
 
 //int main() {
 //

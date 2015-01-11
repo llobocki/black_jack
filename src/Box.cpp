@@ -34,3 +34,8 @@ Box::Box(const int bet) {
 	_bet = bet;
 	_value = 0;
 }
+
+void Box::card(const Card card) {
+	_box.push(card);
+	_value += [](Card c){return c.get_value() < 11 ? c.get_value(): 10;}(card);
+}

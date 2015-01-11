@@ -6,15 +6,17 @@
 class Card
 {
 public:
-    enum Color {clubs = 1, diamonds, hearts, spades};
+    enum Colour {clubs = 1, diamonds, hearts, spades};
     enum Value {A = 1, J = 11, Q = 12, K = 13};
 private:
-    Color color;
+    Colour colour;
     Value value;
 public:
-    Card(Color c, Value v);
+    Card(Colour c, Value v);
     Card();
     Card(const Card &c);
+    bool operator==(const Card& c) const;
+    bool operator!=(const Card& c) const;
     virtual ~Card();
     int get_value() const;
     int get_colour() const;

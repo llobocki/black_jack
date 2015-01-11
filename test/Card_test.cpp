@@ -21,7 +21,7 @@ TEST(negative_card) {
 TEST(Card) {
 	for (int i = 1; i < 5; ++i)
 		for (int j = 1; j < 14; ++j) {
-			Card c = Card(Card::Color(i), Card::Value(j));
+			Card c = Card(Card::Colour(i), Card::Value(j));
 			CHECK_EQUAL(i, c.get_colour());
 			CHECK_EQUAL(j, c.get_value());
 
@@ -34,6 +34,17 @@ TEST(Card) {
 			CHECK_EQUAL(e.get_value(), 1);
 
 		}
+}
+//sprawdzenie operatora porównania
+TEST(comparison) {
+	for (int i = 1; i < 5; ++i)
+		for (int j = 1; j < 14; ++j) {
+			Card c = Card(Card::Colour(i), Card::Value(j));
+			CHECK(c==c);
+		}
+	Card c = Card(Card::Colour(1), Card::Value(1));
+	Card d = Card(Card::Colour(1), Card::Value(2));
+	CHECK(c!=d);
 }
 }
 //TEST(deck) {

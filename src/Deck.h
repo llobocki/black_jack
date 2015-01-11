@@ -9,12 +9,13 @@
 #define DECK_H_
 
 #include <stack>
-#include <utility>
+#include <vector>
 #include "Card.h"
 
 class Deck {
 private:
 	std::stack<Card> deck;
+	std::vector<Card> shuffled_vector;
 public:
 	Deck();
 	Deck(int size);
@@ -23,11 +24,9 @@ public:
 	void shuffle();
 
 	Card get_card();
+	bool empty() const;
+	int size() const;
 
-	int get_size() const;
-
-	int get_colour() const;
-	int get_value() const;
 
 };
 

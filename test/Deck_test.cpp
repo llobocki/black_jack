@@ -17,7 +17,7 @@ TEST(negative_deck) {
 TEST(Deck) {
 	Deck deck = Deck();
 	Card card = Card();
-	CHECK_EQUAL(52, deck.get_size());
+	CHECK_EQUAL(52, deck.size());
 	for (int i = 4; i > 0; --i)
 		for (int j = 13; j > 0; --j) {
 			card = deck.get_card();
@@ -27,7 +27,7 @@ TEST(Deck) {
 		}
 
 	deck = Deck(6);
-	CHECK_EQUAL(6 * 52, deck.get_size());
+	CHECK_EQUAL(6 * 52, deck.size());
 //	std::pair<int, int> temp;
 	for (int h = 0; h < 6; ++h)
 		for (int i = 4; i > 0; --i)
@@ -38,12 +38,34 @@ TEST(Deck) {
 //			std::cout << temp.first << '\t' << temp.second << '\n';
 			}
 }
-tasowanie
+//empty
+TEST(empty) {
+	Deck d = Deck();
+	CHECK(!d.empty());
+	while (!d.empty())
+		d.get_card();
+	CHECK(d.empty());
+}
+//niepotasowane decki
+TEST(unshuffle) {
+	Deck d = Deck();
+	Deck e = Deck();
+	while (!d.empty() && !e.empty()) {
+		CHECK(d.get_card() == e.get_card());
+	}
+
+}
+//tasowanie
 TEST(shuffle) {
+	bool shuffled = false;
 	Deck deck_before = Deck();
 	Deck deck_after = deck_before;
 	deck_after.shuffle();
-	CHECK(deck_before != deck_after);
+	CHECK_EQUAL(deck_before.size(), deck_after.size());
+	while (!deck_after.empty() && !deck_before.empty()) {
+		if (deck_after.get_card() != deck_before.get_card())
+			shuffled = true;
+	}
+	CHECK(shuffled);
 }
 }
-

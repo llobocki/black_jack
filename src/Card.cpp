@@ -1,18 +1,18 @@
 #include <iostream>
 #include "Card.h"
 
-Card::Card(Card::Color c, Card::Value v) {
-	color = c;
+Card::Card(Card::Colour c, Card::Value v) {
+	colour = c;
 	value = v;
 }
 
 Card::Card() {
-	color = clubs;
+	colour = clubs;
 	value = A;
 }
 
 Card::Card(const Card& c) {
-	color = c.color;
+	colour = c.colour;
 	value = c.value;
 }
 
@@ -21,19 +21,27 @@ int Card::get_value() const {
 //	return (value < 11) ? value : 10;
 }
 
+bool Card::operator !=(const Card& c) const {
+	return (colour != c.colour || value != c.value);
+}
+
 int Card::get_colour() const {
-	return color;
+	return colour;
 }
 
 Card::~Card() {
 }
+
+bool Card::operator ==(const Card& c) const {
+	return (colour == c.colour && value == c.value);
+}
 //void Card::print() const {
 //	std::cout << "karta: ";
-//	if (color == clubs)
+//	if (colour == clubs)
 //		std::cout << "clubs ";
-//	else if (color == diamonds)
+//	else if (colour == diamonds)
 //		std::cout << "diamonds ";
-//	else if (color == hearts)
+//	else if (colour == hearts)
 //		std::cout << "hearts ";
 //	else
 //		std::cout << "spades ";

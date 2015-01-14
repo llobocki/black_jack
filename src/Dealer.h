@@ -16,6 +16,7 @@ private:
 public:
 	Dealer(Strategy* strategy);
 	virtual ~Dealer();
+	virtual int get_value() const;
 };
 
 #endif /* DEALER_H_ */

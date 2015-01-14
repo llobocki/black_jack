@@ -16,3 +16,6 @@ Dealer::~Dealer() {
 	// TODO Auto-generated destructor stub
 }
 
+int Dealer::get_value() const {
+	return _box.get_value();
+}

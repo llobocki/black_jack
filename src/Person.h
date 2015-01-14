@@ -18,6 +18,8 @@ public:
 	virtual ~Person();
 
 	virtual Box get_box() const =0;
+	virtual int get_value() const =0;
+//	virtual std::stack<Card> get_card() =0;
 };
 
 #endif /* PERSON_H_ */

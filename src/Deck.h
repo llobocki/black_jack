@@ -14,11 +14,12 @@
 
 class Deck {
 private:
-	std::stack<Card> deck;
-	std::vector<Card> shuffled_vector;
+	std::stack<Card> _deck;
+	std::vector<Card> _shuffled_vector;
 public:
 	Deck();
 	Deck(int size);
+	Deck(std::stack<Card> cards);
 	virtual ~Deck();
 
 	void shuffle();

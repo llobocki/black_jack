@@ -10,7 +10,7 @@
 
 #include <iostream>
 SUITE(Deck) {
-TEST(negative_deck) {
+TEST(negative_Deck) {
 	CHECK(false);
 }
 //sprawdzanie konstruktorów
@@ -37,6 +37,21 @@ TEST(Deck) {
 				CHECK_EQUAL(j, card.get_value());
 //			std::cout << temp.first << '\t' << temp.second << '\n';
 			}
+	//test konstruktora do testów
+	std::stack<Card> cards;
+	for (int i = 4; i > 0; --i)
+		for (int j = 13; j > 0; --j) {
+			cards.push(Card(Card::Colour(i), Card::Value(j)));
+		}
+	deck = Deck(cards);
+	for (int i = 1; i < 5; ++i)
+		for (int j = 1; j < 14; ++j) {
+			card = deck.get_card();
+//			std::cout << i << '\t' << j << '\n';
+			CHECK_EQUAL(i, card.get_colour());
+			CHECK_EQUAL(j, card.get_value());
+
+		}
 }
 //empty
 TEST(empty) {

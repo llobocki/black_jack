@@ -8,6 +8,8 @@
 #include <unittest++/UnitTest++.h>
 #include "../src/Person.h"
 
+
+
 SUITE(Person) {
 TEST(negative_person) {
 	CHECK(false);
@@ -15,7 +17,8 @@ TEST(negative_person) {
 
 //sprawdzenie konstruktorów
 //TEST(Person) {
-//Person person = Person();
+//	Strategy* strategy = new Take_17();
+//Person person = Person(strategy);
 //
 //}
 }

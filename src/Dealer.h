@@ -16,7 +16,12 @@ private:
 public:
 	Dealer(Strategy* strategy);
 	virtual ~Dealer();
-	virtual int get_value() const;
+
+	int get_value() const;
+//	Box get_box() const;
+	void take_card(Card card);
+	bool decision(int rival_value=0);
+
 };
 
 #endif /* DEALER_H_ */

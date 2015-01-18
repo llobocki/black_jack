@@ -19,3 +19,15 @@ Dealer::~Dealer() {
 int Dealer::get_value() const {
 	return _box.get_value();
 }
+
+//Box Dealer::get_box() const {
+//	return _box;
+//}
+
+void Dealer::take_card(Card card) {
+	_box.card(card);
+}
+
+bool Dealer::decision(int rival_value) {
+	return _strategy->decission(_box, rival_value);
+}

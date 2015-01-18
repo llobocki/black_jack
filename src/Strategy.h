@@ -15,8 +15,8 @@ public:
 
 	virtual ~Strategy();
 
-	virtual bool decission(const Box my_box, const int rival_value,
-			const int card_counter)=0;
+	virtual bool decission(const Box my_box, const int rival_value=0,
+			const int card_counter=0)=0;
 protected:
 	Strategy();
 };

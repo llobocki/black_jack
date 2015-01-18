@@ -17,8 +17,8 @@ public:
 	Take_17();
 	virtual ~Take_17();
 
-	virtual bool decission(const Box my_box, const int rival_value,
-				const int card_counter);
+	virtual bool decission(const Box my_box, const int rival_value=0,
+				const int card_counter=0);
 };
 
 #endif /* TAKE17_H_ */

@@ -10,9 +10,6 @@
 
 #include <iostream>
 SUITE(Deck) {
-TEST(negative_Deck) {
-	CHECK(false);
-}
 //sprawdzanie konstruktorów
 TEST(Deck) {
 	Deck deck = Deck();

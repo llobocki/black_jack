@@ -10,15 +10,3 @@
 
 
 
-SUITE(Person) {
-TEST(negative_person) {
-	CHECK(false);
-}
-
-//sprawdzenie konstruktorów
-//TEST(Person) {
-//	Strategy* strategy = new Take_17();
-//Person person = Person(strategy);
-//
-//}
-}

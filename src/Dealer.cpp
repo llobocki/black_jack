@@ -28,6 +28,19 @@ void Dealer::take_card(Card card) {
 	_box.card(card);
 }
 
+void Dealer::play(Deck& deck) {
+	while( _strategy->decission(_box))
+		_box.card(deck.get_card());
+}
+
 bool Dealer::decision(int rival_value) {
 	return _strategy->decission(_box, rival_value);
+}
+
+void Dealer::reset() {
+	_box = Box();
+}
+
+void Dealer::one_card(Deck& deck) {
+	_box.card(deck.get_card());
 }

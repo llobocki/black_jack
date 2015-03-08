@@ -9,9 +9,6 @@
 #include <unittest++/UnitTest++.h>
 
 SUITE(Take17) {
-TEST(negative_Take17) {
-	CHECK(false);
-}
 
 TEST(decision) {
 	Take_17 dec = Take_17();

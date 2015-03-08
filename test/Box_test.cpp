@@ -12,10 +12,6 @@
 
 SUITE(Box) {
 
-TEST(negative_box) {
-	CHECK(false);
-}
-
 //sprawdzenie konstruktorów
 TEST(Box) {
 	Box box = Box();

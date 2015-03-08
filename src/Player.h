@@ -17,12 +17,14 @@ private:
 	std::list<Box> _boxes;
 	int _bankroll;
 	int _number_of_boxes;
+	int _bet;
 //	int _counter;
 public:
-	Player(Strategy* strategy, int number_of_boxes);
+	Player(Strategy* strategy, int number_of_boxes, int bet);
 	virtual ~Player();
 
 	int get_value() const;
+	int get_bankroll() const;
 //	Box get_box() const;
 	void take_card(Card card);
 	bool decision(int rival_value=0);
@@ -32,8 +34,10 @@ public:
 
 	void init_boxes();
 	void one_card(Deck& deck);
+	void play(Deck &deck);
 
-	std::vector<int> scores() const;
+	void scores(int dealer_value);
+
 //	void play(Deck deck);
 };
 

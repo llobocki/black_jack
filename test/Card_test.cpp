@@ -14,9 +14,6 @@
 #include "../src/Card.h"
 
 SUITE(Card) {
-TEST(negative_card) {
-	CHECK(false);
-}
 //sprawdzenie konstruktorów
 TEST(Card) {
 	for (int i = 1; i < 5; ++i)

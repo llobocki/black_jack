@@ -12,7 +12,7 @@
 //#include "../src/Deck.h"
 #include <stack>
 SUITE(Player) {
-TEST(Player_one_box_withot_play) {
+TEST(Player_one_box_without_play) {
 
 	Strategy* take_17 = new Take_17();
 	Player player = Player(take_17, 1, 10);
@@ -32,6 +32,8 @@ TEST(Player_one_box_withot_play) {
 	player.one_card(deck);
 	player.play(deck);
 	CHECK_EQUAL(0, deck.size());
+	CHECK_EQUAL(-10, player.get_bankroll());
+	CHECK_EQUAL(1, player.get_size());
 
 	player.scores(20);
 	CHECK_EQUAL(-10, player.get_bankroll());

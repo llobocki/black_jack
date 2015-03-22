@@ -6,6 +6,7 @@
  */
 
 #include "Player.h"
+#include "iostream"
 
 Player::Player(Strategy* strategy, int number_of_boxes, int bet) :
 		Person(strategy) {
@@ -53,10 +54,19 @@ void Player::reset() {
 }
 
 void Player::play(Deck& deck) {
-	for (auto& box : _boxes) {
-		while (_strategy->decission(box))
-			box.card(deck.get_card());
+	auto box = _boxes.begin();
+	while (box != _boxes.end()) {
+		while (_strategy->decission(*box))
+			(*box).card(deck.get_card());
+		if ((*box).get_value() < 22)
+			++box;
+		else
+			box = _boxes.erase(box);
 	}
+	//	for (auto& box : _boxes) {
+//		while (_strategy->decission(box))
+//			box.card(deck.get_card());
+//	}
 }
 
 int Player::get_bankroll() const {

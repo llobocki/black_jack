@@ -16,6 +16,8 @@ private:
 	std::stack<Card> _box;
 	int _bet;
 	int _value;
+	bool _ace;
+
 public:
 	Box();
 	Box(const int bet);
@@ -26,6 +28,7 @@ public:
 	int get_bet() const;
 	int get_value() const;
 	int size_box() const;
+	bool black_jack() const;
 };
 
 #endif /* BOX_H_ */

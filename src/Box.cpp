@@ -10,6 +10,7 @@
 Box::Box() {
 	_bet = 0;
 	_value = 0;
+	_ace = false;
 	// TODO Auto-generated constructor stub
 
 }
@@ -33,9 +34,17 @@ int Box::size_box() const {
 Box::Box(const int bet) {
 	_bet = bet;
 	_value = 0;
+	_ace = false;
 }
 
 void Box::card(const Card card) {
 	_box.push(card);
-	_value += [](Card c){return c.get_value() < 11 ? c.get_value(): 10;}(card);
+	if (card.get_value() == 1) {
+		_ace = true;
+	}
+	_value += [](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(card);
+}
+
+bool Box::black_jack() const {
+	return _box.size() == 2 && _value == 11 && _ace == true ? true : false;
 }

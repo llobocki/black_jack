@@ -47,10 +47,24 @@ TEST(two_card) {
 		box.card(c);
 		box.card(c);
 		CHECK_EQUAL(10, box.get_bet());
-		CHECK_EQUAL([](Card c) {return c.get_value() < 11 ? c.get_value(): 10;
-		}(c)*2, box.get_value());
+		CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? c.get_value(): 10;
+		}(c) * 2, box.get_value());
 		CHECK_EQUAL(2, box.size_box());
 	}
 
+}
+TEST(black_jack) {
+	Card first = Card(Card::Colour(1), Card::Value(1));
+	for (int i = 1; i < 14; ++i) {
+		Card second = Card(Card::Colour(1), Card::Value(i));
+		Box box = Box();
+		box.card(first);
+		box.card(second);
+		CHECK_EQUAL(
+				[](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(
+						second)+1, box.get_value());
+		CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? false: true;}(
+						second),box.black_jack());
+	}
 }
 }

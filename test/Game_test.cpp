@@ -13,7 +13,7 @@ SUITE(Game) {
 TEST(game) {
 	Strategy* str_dealer = new Take_17();
 	Strategy* str_player = new Take_17();
-	Game game = Game(6, 1, 0.67, str_dealer, str_player, 1, 10);
+	Game game = Game(6, 100, 0.67, str_dealer, str_player, 1, 10);
 	game.play();
 }
 }

@@ -38,8 +38,10 @@ void Game::play() {
 			_dealer.one_card(_deck);
 			_player.one_card(_deck);
 			_player.play(_deck);
-			_dealer.play(_deck);
-			_player.scores(_dealer.get_value());
+			if (_player.get_size() > 0) {
+				_dealer.play(_deck);
+				_player.scores(_dealer.get_value());
+			}
 			_dealer.reset();
 			_player.reset();
 		}

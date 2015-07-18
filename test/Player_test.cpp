@@ -152,4 +152,20 @@ TEST(Player_too_many){
 	player.scores(17);
 	CHECK_EQUAL(1, player.get_size());
 }
+
+TEST(Player_black_jack){
+	Strategy* take_17 = new Take_17();
+	Player player = Player(take_17, 2, 10);
+	player.init_boxes();
+	CHECK_EQUAL(2, player.get_size());
+
+	std::stack<Card> cards;
+	cards.push(Card(Card::Colour(1), Card::Value(6)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(6)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	Deck deck = Deck(cards);
+
+}
 }

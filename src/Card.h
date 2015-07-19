@@ -1,10 +1,7 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include <tuple>
-
-class Card
-{
+class Card {
 public:
     enum Colour {clubs = 1, diamonds, hearts, spades};
     enum Value {A = 1, J = 11, Q = 12, K = 13};

@@ -1,10 +1,3 @@
-/*
- * Take17.h
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #ifndef TAKE17_H_
 #define TAKE17_H_
 

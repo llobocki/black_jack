@@ -1,10 +1,3 @@
-/*
- * Take17.cpp
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #include "Take17.h"
 #include "Decision.h"
 

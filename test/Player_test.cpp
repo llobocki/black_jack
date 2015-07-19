@@ -151,21 +151,29 @@ TEST(Player_too_many){
 
 	player.scores(17);
 	CHECK_EQUAL(1, player.get_size());
+	CHECK_EQUAL(0, player.get_bankroll());
+	player.reset();
 }
 
 TEST(Player_black_jack){
 	Strategy* take_17 = new Take_17();
-	Player player = Player(take_17, 2, 10);
+	Player player = Player(take_17, 1, 10);
 	player.init_boxes();
-	CHECK_EQUAL(2, player.get_size());
+	CHECK_EQUAL(1, player.get_size());
 
 	std::stack<Card> cards;
-	cards.push(Card(Card::Colour(1), Card::Value(6)));
+	cards.push(Card(Card::Colour(1), Card::Value(1)));
 	cards.push(Card(Card::Colour(1), Card::Value(10)));
 	cards.push(Card(Card::Colour(1), Card::Value(6)));
-	cards.push(Card(Card::Colour(1), Card::Value(10)));
 	cards.push(Card(Card::Colour(1), Card::Value(10)));
 	Deck deck = Deck(cards);
 
+	player.one_card(deck);
+	player.one_card(deck);
+	// player.play(deck);
+
+
+	// player.play(deck);
+	// CHECK_EQUAL(1, deck.size());
 }
 }

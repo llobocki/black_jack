@@ -56,13 +56,19 @@ void Player::reset() {
 void Player::play(Deck& deck) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
-		while (_strategy->decission(*box))
-			(*box).card(deck.get_card());
-		if ((*box).get_value() < 22)
-			++box;
-		else
-			box = _boxes.erase(box);
+		// if (!(*box).black_jack()) {
+			while (_strategy->decission(*box))
+				(*box).card(deck.get_card());
+			if ((*box).get_value() < 22)
+				++box;
+			else
+				box = _boxes.erase(box);
 	}
+// 	else{
+// 		std::cout << (*box).black_jack() << '\n';
+// 		++box;
+// 	}
+// }
 	//	for (auto& box : _boxes) {
 //		while (_strategy->decission(box))
 //			box.card(deck.get_card());

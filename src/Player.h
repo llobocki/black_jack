@@ -36,7 +36,7 @@ public:
 	void one_card(Deck& deck);
 	void play(Deck &deck);
 
-	void scores(int dealer_value);
+	void scores(int dealer_value, bool dealer_black_jack);
 
 //	void play(Deck deck);
 };

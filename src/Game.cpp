@@ -40,7 +40,7 @@ void Game::play() {
 			_player.play(_deck);
 			if (_player.get_size() > 0) {
 				_dealer.play(_deck);
-				_player.scores(_dealer.get_value());
+				_player.scores(_dealer.get_value(), _dealer.black_jack());
 			}
 			_dealer.reset();
 			_player.reset();

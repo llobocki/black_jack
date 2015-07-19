@@ -7,6 +7,7 @@
 
 #include "Box.h"
 
+#include "iostream"
 Box::Box() {
 	_bet = 0;
 	_value = 0;

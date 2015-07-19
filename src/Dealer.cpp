@@ -44,3 +44,7 @@ void Dealer::reset() {
 void Dealer::one_card(Deck& deck) {
 	_box.card(deck.get_card());
 }
+
+bool Dealer::black_jack() const {
+	return _box.black_jack();
+}

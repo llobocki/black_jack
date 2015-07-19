@@ -11,6 +11,7 @@
 #include "../src/Take17.h"
 //#include "../src/Deck.h"
 #include <stack>
+#include "iostream"
 SUITE(Player) {
 TEST(Player_one_box_without_play) {
 
@@ -35,13 +36,13 @@ TEST(Player_one_box_without_play) {
 	CHECK_EQUAL(-10, player.get_bankroll());
 	CHECK_EQUAL(1, player.get_size());
 
-	player.scores(20);
+	player.scores(20, false);
 	CHECK_EQUAL(-10, player.get_bankroll());
 
-	player.scores(19);
+	player.scores(19, false);
 	CHECK_EQUAL(0, player.get_bankroll());
 
-	player.scores(18);
+	player.scores(18, false);
 	CHECK_EQUAL(20, player.get_bankroll());
 
 	player.reset();
@@ -65,7 +66,7 @@ TEST(Player_one_box_with_play) {
 	player.one_card(deck);
 	player.play(deck);
 	CHECK_EQUAL(0, deck.size());
-	player.scores(18);
+	player.scores(18, false);
 	CHECK_EQUAL(10, player.get_bankroll());
 }
 TEST(Player_two_boxes_withot_play) {
@@ -85,7 +86,7 @@ TEST(Player_two_boxes_withot_play) {
 	player.one_card(deck);
 	player.play(deck);
 	CHECK_EQUAL(0, deck.size());
-	player.scores(20);
+	player.scores(20, false);
 	CHECK_EQUAL(0, deck.size());
 	player.reset();
 
@@ -111,19 +112,19 @@ TEST(Player_two_boxes_with_play) {
 	player.play(deck);
 	CHECK_EQUAL(0, deck.size());
 
-	player.scores(21);
+	player.scores(21, false);
 	CHECK_EQUAL(-20, player.get_bankroll());
 
-	player.scores(20);
+	player.scores(20, false);
 	CHECK_EQUAL(-10, player.get_bankroll());
 
-	player.scores(19);
+	player.scores(19, false);
 	CHECK_EQUAL(10, player.get_bankroll());
 
-	player.scores(17);
+	player.scores(17, false);
 	CHECK_EQUAL(50, player.get_bankroll());
 
-	player.scores(22);
+	player.scores(22, false);
 	CHECK_EQUAL(90, player.get_bankroll());
 
 	CHECK_EQUAL(0, deck.size());
@@ -149,7 +150,7 @@ TEST(Player_too_many){
 	player.one_card(deck);
 	player.play(deck);
 
-	player.scores(17);
+	player.scores(17, false);
 	CHECK_EQUAL(1, player.get_size());
 	CHECK_EQUAL(0, player.get_bankroll());
 	player.reset();
@@ -162,18 +163,39 @@ TEST(Player_black_jack){
 	CHECK_EQUAL(1, player.get_size());
 
 	std::stack<Card> cards;
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
 	cards.push(Card(Card::Colour(1), Card::Value(1)));
 	cards.push(Card(Card::Colour(1), Card::Value(10)));
-	cards.push(Card(Card::Colour(1), Card::Value(6)));
-	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(1)));
 	Deck deck = Deck(cards);
 
+
 	player.one_card(deck);
 	player.one_card(deck);
-	// player.play(deck);
+	player.play(deck);
+	player.scores(17, false);
+	CHECK_EQUAL(4, deck.size());
+	CHECK_EQUAL(15, player.get_bankroll());
+	player.reset();
 
+	player.init_boxes();
+	player.one_card(deck);
+	player.one_card(deck);
+	player.play(deck);
+	player.scores(21, true);
+	CHECK_EQUAL(2, deck.size());
+	CHECK_EQUAL(15, player.get_bankroll());
+	player.reset();
 
-	// player.play(deck);
-	// CHECK_EQUAL(1, deck.size());
+	player.init_boxes();
+	player.one_card(deck);
+	player.one_card(deck);
+	player.play(deck);
+	player.scores(21, true);
+	CHECK_EQUAL(0, deck.size());
+	CHECK_EQUAL(5, player.get_bankroll());
+	player.reset();
 }
 }

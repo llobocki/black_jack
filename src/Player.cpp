@@ -56,7 +56,7 @@ void Player::reset() {
 void Player::play(Deck& deck) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
-		// if (!(*box).black_jack()) {
+		if (!(*box).black_jack()) {
 			while (_strategy->decission(*box))
 				(*box).card(deck.get_card());
 			if ((*box).get_value() < 22)
@@ -64,11 +64,10 @@ void Player::play(Deck& deck) {
 			else
 				box = _boxes.erase(box);
 	}
-// 	else{
-// 		std::cout << (*box).black_jack() << '\n';
-// 		++box;
-// 	}
-// }
+	else{
+		++box;
+	}
+}
 	//	for (auto& box : _boxes) {
 //		while (_strategy->decission(box))
 //			box.card(deck.get_card());
@@ -79,9 +78,15 @@ int Player::get_bankroll() const {
 	return _bankroll;
 }
 
-void Player::scores(int dealer_value) {
+void Player::scores(int dealer_value, bool dealer_black_jack) {
 	for (auto& box : _boxes) {
-		if (dealer_value > 21 || box.get_value() > dealer_value)
+		if (box.black_jack() && dealer_black_jack)
+			_bankroll += box.get_bet();
+		else if (box.black_jack())
+			_bankroll += box.get_bet() + box.get_bet() * 3 / 2;
+		else if ( !box.black_jack() && dealer_black_jack)
+			{}
+		else if (dealer_value > 21 || box.get_value() > dealer_value)
 			_bankroll += box.get_bet() * 2;
 		else if (box.get_value() == dealer_value)
 			_bankroll += box.get_bet();

@@ -20,6 +20,7 @@ public:
 	void play(Deck& deck);
 
 	int get_value() const;
+	bool black_jack() const;
 //	Box get_box() const;
 	void take_card(Card card);
 	bool decision(int rival_value=0);

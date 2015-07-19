@@ -9,6 +9,7 @@
 #define TAKE17_H_
 
 #include "Strategy.h"
+#include "Decision.h"
 
 //wzorzec Strategia
 
@@ -17,7 +18,7 @@ public:
 	Take_17();
 	virtual ~Take_17();
 
-	virtual bool decission(const Box my_box, const int rival_value=0,
+	virtual Decision decission(const Box my_box, const int rival_value=0,
 				const int card_counter=0);
 };
 

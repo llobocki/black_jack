@@ -11,6 +11,7 @@
 #include <list>
 
 #include "Deck.h"
+#include "Decision.h"
 
 class Player: public Person {
 private:
@@ -27,7 +28,7 @@ public:
 	int get_bankroll() const;
 //	Box get_box() const;
 	void take_card(Card card);
-	bool decision(int rival_value=0);
+	Decision decision(int rival_value=0);
 
 	int get_size() const;
 	void reset();

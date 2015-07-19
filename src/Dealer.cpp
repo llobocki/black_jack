@@ -6,6 +6,7 @@
  */
 
 #include "Dealer.h"
+#include "Decision.h"
 
 Dealer::Dealer(Strategy* strategy): Person(strategy) {
 	// TODO Auto-generated constructor stub
@@ -29,11 +30,11 @@ void Dealer::take_card(Card card) {
 }
 
 void Dealer::play(Deck& deck) {
-	while( _strategy->decission(_box))
+	while( _strategy->decission(_box) == Decision::card)
 		_box.card(deck.get_card());
 }
 
-bool Dealer::decision(int rival_value) {
+Decision Dealer::decision(int rival_value) {
 	return _strategy->decission(_box, rival_value);
 }
 

@@ -9,6 +9,7 @@
 #define DEALER_H_
 
 #include "Person.h"
+#include "Decision.h"
 
 class Dealer: public Person {
 private:
@@ -23,7 +24,7 @@ public:
 	bool black_jack() const;
 //	Box get_box() const;
 	void take_card(Card card);
-	bool decision(int rival_value=0);
+	Decision decision(int rival_value=0);
 	void reset();
 	void one_card(Deck& deck);
 };

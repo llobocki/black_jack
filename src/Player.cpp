@@ -7,6 +7,7 @@
 
 #include "Player.h"
 #include "iostream"
+#include "Decision.h"
 
 Player::Player(Strategy* strategy, int number_of_boxes, int bet) :
 		Person(strategy) {
@@ -27,8 +28,8 @@ int Player::get_value() const {
 void Player::take_card(Card card) {
 }
 
-bool Player::decision(int rival_value) {
-	return true;
+Decision Player::decision(int rival_value) {
+	return Decision::card;
 //	return _strategy->decission(_box, rival_value);
 }
 
@@ -57,7 +58,7 @@ void Player::play(Deck& deck) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
 		if (!(*box).black_jack()) {
-			while (_strategy->decission(*box))
+			while (_strategy->decission(*box) == Decision::card)
 				(*box).card(deck.get_card());
 			if ((*box).get_value() < 22)
 				++box;

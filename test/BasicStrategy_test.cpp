@@ -1,12 +1,97 @@
 #include "../src/BasicStrategy.h"
-
+#include "../src/Box.h"
+#include "../src/Take17.h"
 #include <unittest++/UnitTest++.h>
+#include "../src/Decision.h"
 //#include "../src/Card.h"
 
-// SUITE(BasicStrategy) {
-//
-// //sprawdzenie konstruktorów
-// TEST(BasicStrategy) {
-//   CHECK(true);
-// }
-// }
+SUITE(BasicStrategy) {
+
+TEST(BasicStrategyTabNormalStand){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (10));
+  Card card_2 = Card(Card::Colour(1), Card::Value (10));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 10));
+}
+
+TEST(BasicStrategyTabNormalCard){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (2));
+  Card card_2 = Card(Card::Colour(1), Card::Value (3));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+}
+
+
+TEST(BasicStrategyTabNormalDouble){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (5));
+  Card card_2 = Card(Card::Colour(1), Card::Value (5));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 2));
+}
+
+
+TEST(BasicStrategyTabSplitStand){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (9));
+  Card card_2 = Card(Card::Colour(1), Card::Value (9));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 9));
+}
+
+TEST(BasicStrategyTabSplitCard){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (8));
+  Card card_2 = Card(Card::Colour(1), Card::Value (8));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+}
+
+
+TEST(BasicStrategyTabSplitDouble){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (5));
+  Card card_2 = Card(Card::Colour(1), Card::Value (5));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 2));
+}
+
+TEST(BasicStrategyTabSplitSplit){
+  Box box = Box(10);
+  Card card_1 = Card(Card::Colour(1), Card::Value (9));
+  Card card_2 = Card(Card::Colour(1), Card::Value (9));
+  box.card(card_1);
+  box.card(card_2);
+
+
+  Strategy* basic_strategy = new BasicStrategy();
+  CHECK_EQUAL(Decision::split, basic_strategy->decission(box, 8));
+}
+
+}

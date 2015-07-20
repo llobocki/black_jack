@@ -20,6 +20,12 @@ Box::~Box() {
 	// TODO Auto-generated destructor stub
 }
 
+
+int Box::card_value(int value) const{
+	return value < 10 ? value : 10;
+}
+
+
 int Box::get_bet() const {
 	return _bet;
 }
@@ -43,9 +49,13 @@ void Box::card(const Card card) {
 	if (card.get_value() == 1) {
 		_ace = true;
 	}
-	_value += [](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(card);
+	_value += card_value(card.get_value());
 }
 
 bool Box::black_jack() const {
 	return _box.size() == 2 && _value == 11 && _ace == true ? true : false;
+}
+
+bool Box::can_split(int split_counter) const{
+	return (split_counter < 4 ) && _value % card_value((_box.top()).get_value()) == 0 ? true : false;
 }

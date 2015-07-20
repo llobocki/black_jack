@@ -14,6 +14,7 @@ Player::Player(Strategy* strategy, int number_of_boxes, int bet) :
 	_bankroll = 0;
 	_number_of_boxes = number_of_boxes;
 	_bet = bet;
+	_split_counter = 0;
 //	_counter = 0;
 }
 
@@ -41,6 +42,7 @@ void Player::init_boxes() {
 	for (int i = 0; i < _number_of_boxes; ++i) {
 		_boxes.push_back(Box(_bet));
 		_bankroll -= _bet;
+		_split_counter = 0;
 	}
 }
 
@@ -52,14 +54,23 @@ void Player::one_card(Deck& deck) {
 
 void Player::reset() {
 	_boxes.clear();
+	_split_counter = 0;
 }
 
 void Player::play(Deck& deck) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
 		if (!(*box).black_jack()) {
-			while (_strategy->decission(*box) == Decision::card)
-				(*box).card(deck.get_card());
+			Decision decision = _strategy->decission(*box);
+
+			while ( decision != Decision::no_card){
+				if (decision == Decision::card)
+					(*box).card(deck.get_card());
+				else if (decision == Decision::split){
+
+				}
+		 		decision = _strategy->decission(*box);
+			}
 			if ((*box).get_value() < 22)
 				++box;
 			else

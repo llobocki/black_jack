@@ -54,13 +54,13 @@ TEST(BasicStrategyTabSplitStand){
 
 
   Strategy* basic_strategy = new BasicStrategy();
-  CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 9));
+  CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 10));
 }
 
 TEST(BasicStrategyTabSplitCard){
   Box box = Box(10);
-  Card card_1 = Card(Card::Colour(1), Card::Value (8));
-  Card card_2 = Card(Card::Colour(1), Card::Value (8));
+  Card card_1 = Card(Card::Colour(1), Card::Value (7));
+  Card card_2 = Card(Card::Colour(1), Card::Value (7));
   box.card(card_1);
   box.card(card_2);
 

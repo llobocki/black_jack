@@ -8,7 +8,7 @@ Take_17::Take_17() :
 Take_17::~Take_17() {
 }
 
-Decision Take_17::decission(const Box my_box, const int rival_value,
+Decision Take_17::decission(const Box my_box, const int rival_value, const int split_counter,
 		const int card_counter) {
 	return my_box.get_value() < 17 ? Decision::card : Decision::no_card;
 }

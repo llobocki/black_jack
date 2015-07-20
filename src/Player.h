@@ -13,6 +13,7 @@ private:
 	int _bankroll;
 	int _number_of_boxes;
 	int _bet;
+	int _split_counter;
 //	int _counter;
 public:
 	Player(Strategy* strategy, int number_of_boxes, int bet);

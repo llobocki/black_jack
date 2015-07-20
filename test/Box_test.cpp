@@ -1,6 +1,7 @@
 #include "../src/Box.h"
 
 #include <unittest++/UnitTest++.h>
+#include <iostream>
 //#include "../src/Card.h"
 
 SUITE(Box) {
@@ -60,4 +61,22 @@ TEST(black_jack) {
 						second),box.black_jack());
 	}
 }
+
+TEST(split) {
+	for (int i = 1; i < 14; ++i) {
+		Card first = Card(Card::Colour(1), Card::Value(i));
+		Box box = Box();
+		box.card(first);
+		box.card(first);
+		CHECK_EQUAL(
+				[](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(
+						first)*2, box.get_value());
+		CHECK_EQUAL(true, box.can_split(0));
+		// CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? false: true;}(
+		// 				second),box.black_jack());
+	}
+}
+
+
+
 }

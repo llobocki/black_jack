@@ -29,6 +29,10 @@ public:
 	int get_value() const;
 	int size_box() const;
 	bool black_jack() const;
+	bool can_split(int split_counter) const;
+
+private:
+	int card_value(int value) const;
 };
 
 #endif /* BOX_H_ */

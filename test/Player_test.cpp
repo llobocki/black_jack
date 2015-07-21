@@ -1,14 +1,8 @@
-/*
- * Player_test.cpp
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #include "../src/Player.h"
 #include <unittest++/UnitTest++.h>
 
 #include "../src/Take17.h"
+#include "../src/BasicStrategy.h"
 //#include "../src/Deck.h"
 #include <stack>
 #include "iostream"
@@ -197,5 +191,42 @@ TEST(Player_black_jack){
 	CHECK_EQUAL(0, deck.size());
 	CHECK_EQUAL(5, player.get_bankroll());
 	player.reset();
+}
+
+
+
+TEST(Player_double){
+	Strategy* basic_strategy = new BasicStrategy();
+	Player player = Player(basic_strategy, 2, 10);
+	player.init_boxes();
+	CHECK_EQUAL(2, player.get_size());
+
+	std::stack<Card> cards;
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(5)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(5)));
+	Deck deck = Deck(cards);
+
+	player.one_card(deck);
+	player.one_card(deck);
+	player.play(deck, 9);
+	// player.scores(19, false);
+	// CHECK_EQUAL(30, player.get_bankroll());
+	// player.reset();
+
+
+// TEST(BasicStrategyTabSplitDouble){
+//   Box box = Box(10);
+//   Card card_1 = Card(Card::Colour(1), Card::Value (5));
+//   Card card_2 = Card(Card::Colour(1), Card::Value (5));
+//   box.card(card_1);
+//   box.card(card_2);
+//
+//
+//   Strategy* basic_strategy = new BasicStrategy();
+//   CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 2));
+// }
 }
 }

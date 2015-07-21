@@ -1,10 +1,3 @@
-/*
- * Player.cpp
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #include "Player.h"
 #include "iostream"
 #include "Decision.h"
@@ -47,6 +40,7 @@ void Player::init_boxes() {
 }
 
 void Player::one_card(Deck& deck) {
+	// std::cout << "bbbbbbbbbbbbbbbb\n";
 	for (auto& box : _boxes) {
 		box.card(deck.get_card());
 	}
@@ -57,20 +51,28 @@ void Player::reset() {
 	_split_counter = 0;
 }
 
-void Player::play(Deck& deck) {
+void Player::play(Deck& deck, int rival_value) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
 		if (!(*box).black_jack()) {
-			Decision decision = _strategy->decission(*box);
+			Decision decision = _strategy->decission(*box, rival_value);
 
 			while ( decision != Decision::no_card){
-				if (decision == Decision::card)
-					(*box).card(deck.get_card());
-				else if (decision == Decision::split){
-
+				if (decision == Decision::double_card){
+					int bet = (*box).get_bet();
+					_bet -= bet;
+					(*box).card(deck.get_card(), bet);
+					decision = Decision::no_card;
 				}
-		 		decision = _strategy->decission(*box);
+				else{
+					if (decision == Decision::card)
+						(*box).card(deck.get_card());
+					else if (decision == Decision::split){
+
+						}
+		 			decision = _strategy->decission(*box, rival_value);
 			}
+		}
 			if ((*box).get_value() < 22)
 				++box;
 			else

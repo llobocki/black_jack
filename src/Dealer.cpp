@@ -29,7 +29,7 @@ void Dealer::take_card(Card card) {
 	_box.card(card);
 }
 
-void Dealer::play(Deck& deck) {
+void Dealer::play(Deck& deck, int rival_value) {
 	while( _strategy->decission(_box) == Decision::card)
 		_box.card(deck.get_card());
 }

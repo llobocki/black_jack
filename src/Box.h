@@ -23,7 +23,7 @@ public:
 	Box(const int bet);
 	virtual ~Box();
 
-	void card(const Card card);
+	void card(const Card card, int bet=0);
 
 	int get_bet() const;
 	int get_value() const;

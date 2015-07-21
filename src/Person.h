@@ -1,10 +1,3 @@
-/*
- * Person.h
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #ifndef PERSON_H_
 #define PERSON_H_
 
@@ -23,7 +16,7 @@ public:
 	virtual int get_value() const =0;
 	virtual void take_card(Card card)=0;
 	virtual Decision decision(int rival_value=0) =0;
-	virtual void play(Deck &deck) =0;
+	virtual void play(Deck &deck, int rival_value=0) =0;
 	virtual void reset()=0;
 	virtual void one_card(Deck& deck)=0;
 //	virtual std::stack<Card> get_card() =0;

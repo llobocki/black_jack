@@ -44,7 +44,9 @@ Box::Box(const int bet) {
 	_ace = false;
 }
 
-void Box::card(const Card card) {
+void Box::card(const Card card, int bet) {
+	if (bet > 0)
+		_bet += bet;
 	_box.push(card);
 	if (card.get_value() == 1) {
 		_ace = true;

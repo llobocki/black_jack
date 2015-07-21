@@ -30,7 +30,7 @@ public:
 
 	void init_boxes();
 	void one_card(Deck& deck);
-	void play(Deck &deck);
+	void play(Deck &deck, int rival_value=0);
 
 	void scores(int dealer_value, bool dealer_black_jack);
 

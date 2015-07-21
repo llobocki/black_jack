@@ -18,7 +18,7 @@ public:
 	Dealer(Strategy* strategy);
 	virtual ~Dealer();
 
-	void play(Deck& deck);
+	void play(Deck& deck, int rival_value=0);
 
 	int get_value() const;
 	bool black_jack() const;

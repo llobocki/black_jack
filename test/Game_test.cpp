@@ -8,7 +8,6 @@
 #include <unittest++/UnitTest++.h>
 #include "../src/Game.h"
 #include "../src/Take17.h"
-
 SUITE(Game) {
 TEST(game) {
 	Strategy* str_dealer = new Take_17();

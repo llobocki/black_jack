@@ -1,10 +1,3 @@
-/*
- * Game.cpp
- *
- *  Created on: 22 mar 2015
- *      Author: lukasz
- */
-
 #include "Game.h"
 #include <iostream>
 

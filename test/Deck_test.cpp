@@ -1,10 +1,3 @@
-/*
- * Deck_test.cpp
- *
- *  Created on: 10 sty 2015
- *      Author: lukasz
- */
-
 #include <unittest++/UnitTest++.h>
 #include "../src/Deck.h"
 

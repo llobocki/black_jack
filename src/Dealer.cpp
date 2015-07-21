@@ -1,10 +1,3 @@
-/*
- * Dealer.cpp
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #include "Dealer.h"
 #include "Decision.h"
 

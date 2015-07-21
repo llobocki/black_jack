@@ -1,10 +1,3 @@
-/*
- * Dealer.h
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #ifndef DEALER_H_
 #define DEALER_H_
 

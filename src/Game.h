@@ -1,10 +1,3 @@
-/*
- * Game.h
- *
- *  Created on: 22 mar 2015
- *      Author: lukasz
- */
-
 #ifndef GAME_H_
 #define GAME_H_
 

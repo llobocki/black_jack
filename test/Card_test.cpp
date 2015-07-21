@@ -1,10 +1,3 @@
-/*
- * card_test.cpp
- *
- *  Created on: 29 mar 2014
- *      Author: lukasz
- */
-
 #include <functional>
 #include <vector>
 #include <algorithm>
@@ -98,4 +91,3 @@ TEST(comparison) {
 //
 //}
 //}
-

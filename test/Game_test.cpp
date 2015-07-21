@@ -1,10 +1,3 @@
-/*
- * Game_test.cpp
- *
- *  Created on: 22 mar 2015
- *      Author: lukasz
- */
-
 #include <unittest++/UnitTest++.h>
 #include "../src/Game.h"
 #include "../src/Take17.h"

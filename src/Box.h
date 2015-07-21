@@ -1,10 +1,3 @@
-/*
- * Box.h
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #ifndef BOX_H_
 #define BOX_H_
 

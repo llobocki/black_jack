@@ -1,10 +1,3 @@
-/*
- * Take17_test.cpp
- *
- *  Created on: 11 sty 2015
- *      Author: lukasz
- */
-
 #include "../src/Take17.h"
 #include <unittest++/UnitTest++.h>
 

@@ -212,21 +212,61 @@ TEST(Player_double){
 	player.one_card(deck);
 	player.one_card(deck);
 	player.play(deck, 9);
-	// player.scores(19, false);
-	// CHECK_EQUAL(30, player.get_bankroll());
-	// player.reset();
+	player.scores(19, false);
+	CHECK_EQUAL(30, player.get_bankroll());
+	player.reset();
 
-
-// TEST(BasicStrategyTabSplitDouble){
-//   Box box = Box(10);
-//   Card card_1 = Card(Card::Colour(1), Card::Value (5));
-//   Card card_2 = Card(Card::Colour(1), Card::Value (5));
-//   box.card(card_1);
-//   box.card(card_2);
-//
-//
-//   Strategy* basic_strategy = new BasicStrategy();
-//   CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 2));
-// }
 }
+TEST(Player_split){
+	Strategy* basic_strategy = new BasicStrategy();
+	Player player = Player(basic_strategy, 1, 10);
+	player.init_boxes();
+	CHECK_EQUAL(1, player.get_size());
+
+	std::stack<Card> cards;
+	cards.push(Card(Card::Colour(1), Card::Value(8)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	Deck deck = Deck(cards);
+	player.one_card(deck);
+	player.one_card(deck);
+	player.play(deck, 6);
+	player.scores(16, false);
+	CHECK_EQUAL(2, player.get_size());
+	CHECK_EQUAL(20, player.get_bankroll());
+	CHECK_EQUAL(0, deck.size());
+	player.reset();
+
+}
+
+TEST(Player_split_enough){
+	Strategy* basic_strategy = new BasicStrategy();
+	Player player = Player(basic_strategy, 1, 10);
+	player.init_boxes();
+	CHECK_EQUAL(1, player.get_size());
+
+	std::stack<Card> cards;
+	cards.push(Card(Card::Colour(1), Card::Value(8)));
+	cards.push(Card(Card::Colour(1), Card::Value(8)));
+	cards.push(Card(Card::Colour(1), Card::Value(10)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+	cards.push(Card(Card::Colour(1), Card::Value(9)));
+
+	Deck deck = Deck(cards);
+	player.one_card(deck);
+	player.one_card(deck);
+	player.play(deck, 6);
+	player.scores(18, false);
+	CHECK_EQUAL(4, player.get_size());
+	CHECK_EQUAL(-10, player.get_bankroll());
+	CHECK_EQUAL(0, deck.size());
+	player.reset();
+
+}
+
+
 }

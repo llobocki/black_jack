@@ -70,7 +70,7 @@ BasicStrategy::~BasicStrategy(){
 
 Decision BasicStrategy::decission(const Box my_box, const int rival_value, const int split_counter,
 		const int card_counter) {
-      if (my_box.can_split(card_counter) )
+      if (my_box.can_split(split_counter) )
         return tab_split[my_box.get_value()/2 -1][rival_value-2];
       else
         return tab_normal[my_box.get_value()-5][rival_value-2];

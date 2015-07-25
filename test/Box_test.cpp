@@ -74,6 +74,13 @@ TEST(split) {
 		CHECK_EQUAL(true, box.can_split(0));
 		// CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? false: true;}(
 		// 				second),box.black_jack());
+		first = box.split_card();
+		box.set_split();
+		CHECK_EQUAL(
+						[](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(
+								first), box.get_value());
+		CHECK_EQUAL(1, box.size_box());
+		CHECK_EQUAL(true, box.split());
 	}
 }
 

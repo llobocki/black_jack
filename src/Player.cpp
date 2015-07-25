@@ -55,12 +55,19 @@ void Player::play(Deck& deck, int rival_value) {
 	auto box = _boxes.begin();
 	while (box != _boxes.end()) {
 		if (!(*box).black_jack()) {
-			Decision decision = _strategy->decission(*box, rival_value);
+			if ((*box).size_box() == 1){
+				_split_counter++;
+				(*box).card(deck.get_card());
+			}
+			if (!(*box).split()){
+				_split_counter = 0;
+			}
+			Decision decision = _strategy->decission(*box, rival_value, _split_counter);
 
 			while ( decision != Decision::no_card){
 				if (decision == Decision::double_card){
 					int bet = (*box).get_bet();
-					_bet -= bet;
+					_bankroll -= bet;
 					(*box).card(deck.get_card(), bet);
 					decision = Decision::no_card;
 				}
@@ -68,9 +75,17 @@ void Player::play(Deck& deck, int rival_value) {
 					if (decision == Decision::card)
 						(*box).card(deck.get_card());
 					else if (decision == Decision::split){
+						int bet = (*box).get_bet();
+						_bankroll -= bet;
+						_split_counter++;
+						Card card = (*box).split_card();
+						_boxes.insert(box, Box(bet, card, true));
+						(*box).set_split();
+						--box;
+						(*box).card(deck.get_card());
+					}
 
-						}
-		 			decision = _strategy->decission(*box, rival_value);
+		 			decision = _strategy->decission(*box, rival_value, _split_counter);
 			}
 		}
 			if ((*box).get_value() < 22)

@@ -5,6 +5,7 @@ Box::Box() {
 	_bet = 0;
 	_value = 0;
 	_ace = false;
+	_split = false;
 	// TODO Auto-generated constructor stub
 
 }
@@ -31,10 +32,24 @@ int Box::size_box() const {
 	return _box.size();
 }
 
+bool Box::split() const{
+	return _split;
+}
+
 Box::Box(const int bet) {
 	_bet = bet;
 	_value = 0;
 	_ace = false;
+	_split = false;
+}
+
+
+Box::Box(const int bet, const Card card, const bool split) {
+	_box.push(card);
+	_bet = bet;
+	_value = card_value(card.get_value());
+	_ace = false;
+	_split = split;
 }
 
 void Box::card(const Card card, int bet) {
@@ -52,5 +67,16 @@ bool Box::black_jack() const {
 }
 
 bool Box::can_split(int split_counter) const{
-	return (split_counter < 4 ) && _value % card_value((_box.top()).get_value()) == 0 ? true : false;
+	return (split_counter < 3 ) && _value % card_value((_box.top()).get_value()) == 0 ? true : false;
+}
+
+Card Box::split_card(){
+	Card card = _box.top();
+	_box.pop();
+	_value /= 2;
+	return card;
+}
+
+void Box::set_split(){
+	_split = true;
 }

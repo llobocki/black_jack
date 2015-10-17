@@ -10,6 +10,8 @@ private:
 	int _bet;
 	int _value;
 	bool _ace;
+	bool _another_aces;
+	bool _soft_ace;
 	bool _split;
 
 public:
@@ -29,6 +31,8 @@ public:
 	bool can_split(int split_counter) const;
 	void set_split();
 	Card split_card();
+
+	bool soft_ace() const;
 private:
 	int card_value(int value) const;
 };

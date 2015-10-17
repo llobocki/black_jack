@@ -22,7 +22,7 @@ TEST(Box) {
 //box bierze kartę
 TEST(card) {
 	for (int i = 1; i < 5; ++i)
-		for (int j = 1; j < 14; ++j) {
+		for (int j = 2; j < 14; ++j) {
 			Card c = Card(Card::Colour(i), Card::Value(j));
 			Box box = Box(10);
 			box.card(c);
@@ -35,7 +35,7 @@ TEST(card) {
 }
 
 TEST(two_card) {
-	for (int j = 1; j < 14; ++j) {
+	for (int j = 2; j < 14; ++j) {
 		Card c = Card(Card::Colour(1), Card::Value(j));
 		Box box = Box(10);
 		box.card(c);
@@ -56,14 +56,14 @@ TEST(black_jack) {
 		box.card(second);
 		CHECK_EQUAL(
 				[](Card c) {return c.get_value() < 10 ? c.get_value(): 10;}(
-						second)+1, box.get_value());
+						second)+11, box.get_value());
 		CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? false: true;}(
 						second),box.black_jack());
 	}
 }
 
 TEST(split) {
-	for (int i = 1; i < 14; ++i) {
+	for (int i = 2; i < 14; ++i) {
 		Card first = Card(Card::Colour(1), Card::Value(i));
 		Box box = Box();
 		box.card(first);
@@ -84,6 +84,29 @@ TEST(split) {
 	}
 }
 
+TEST(soft_ace){
+	Box box = Box();
+	Card first = Card(Card::Colour(1), Card::Value(1));
+	box.card(first);
+	CHECK_EQUAL(11, box.get_value());
+	CHECK_EQUAL(true, box.soft_ace());
+
+	Card second = Card(Card::Colour(1), Card::Value(1));
+	box.card(second);
+	CHECK_EQUAL(12, box.get_value());
+	CHECK_EQUAL(true, box.soft_ace());
 
 
+	Card third = Card(Card::Colour(1), Card::Value(10));
+	box.card(third);
+	CHECK_EQUAL(12, box.get_value());
+	CHECK_EQUAL(false, box.soft_ace());
+
+	Card fourth = Card(Card::Colour(1), Card::Value(9));
+	box.card(fourth);
+	CHECK_EQUAL(21, box.get_value());
+	CHECK_EQUAL(false, box.soft_ace());
+
+
+}
 }

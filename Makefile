@@ -99,24 +99,51 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named black_jack
+# Target rules for targets named bin/black_jack
 
 # Build rule for target.
-black_jack: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 black_jack
-.PHONY : black_jack
+bin/black_jack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bin/black_jack
+.PHONY : bin/black_jack
 
 # fast build rule for target.
-black_jack/fast:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/build
-.PHONY : black_jack/fast
+bin/black_jack/fast:
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/build
+.PHONY : bin/black_jack/fast
+
+#=============================================================================
+# Target rules for targets named bin/test
+
+# Build rule for target.
+bin/test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bin/test
+.PHONY : bin/test
+
+# fast build rule for target.
+bin/test/fast:
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/build
+.PHONY : bin/test/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 src/BasicStrategy.o: src/BasicStrategy.cpp.o
 .PHONY : src/BasicStrategy.o
 
 # target to build an object file
 src/BasicStrategy.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/BasicStrategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/BasicStrategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/BasicStrategy.cpp.o
 .PHONY : src/BasicStrategy.cpp.o
 
 src/BasicStrategy.i: src/BasicStrategy.cpp.i
@@ -124,7 +151,8 @@ src/BasicStrategy.i: src/BasicStrategy.cpp.i
 
 # target to preprocess a source file
 src/BasicStrategy.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/BasicStrategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/BasicStrategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/BasicStrategy.cpp.i
 .PHONY : src/BasicStrategy.cpp.i
 
 src/BasicStrategy.s: src/BasicStrategy.cpp.s
@@ -132,7 +160,8 @@ src/BasicStrategy.s: src/BasicStrategy.cpp.s
 
 # target to generate assembly for a file
 src/BasicStrategy.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/BasicStrategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/BasicStrategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/BasicStrategy.cpp.s
 .PHONY : src/BasicStrategy.cpp.s
 
 src/Box.o: src/Box.cpp.o
@@ -140,7 +169,8 @@ src/Box.o: src/Box.cpp.o
 
 # target to build an object file
 src/Box.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Box.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Box.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Box.cpp.o
 .PHONY : src/Box.cpp.o
 
 src/Box.i: src/Box.cpp.i
@@ -148,7 +178,8 @@ src/Box.i: src/Box.cpp.i
 
 # target to preprocess a source file
 src/Box.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Box.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Box.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Box.cpp.i
 .PHONY : src/Box.cpp.i
 
 src/Box.s: src/Box.cpp.s
@@ -156,7 +187,8 @@ src/Box.s: src/Box.cpp.s
 
 # target to generate assembly for a file
 src/Box.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Box.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Box.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Box.cpp.s
 .PHONY : src/Box.cpp.s
 
 src/Card.o: src/Card.cpp.o
@@ -164,7 +196,8 @@ src/Card.o: src/Card.cpp.o
 
 # target to build an object file
 src/Card.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Card.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Card.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Card.cpp.o
 .PHONY : src/Card.cpp.o
 
 src/Card.i: src/Card.cpp.i
@@ -172,7 +205,8 @@ src/Card.i: src/Card.cpp.i
 
 # target to preprocess a source file
 src/Card.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Card.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Card.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Card.cpp.i
 .PHONY : src/Card.cpp.i
 
 src/Card.s: src/Card.cpp.s
@@ -180,7 +214,8 @@ src/Card.s: src/Card.cpp.s
 
 # target to generate assembly for a file
 src/Card.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Card.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Card.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Card.cpp.s
 .PHONY : src/Card.cpp.s
 
 src/Dealer.o: src/Dealer.cpp.o
@@ -188,7 +223,8 @@ src/Dealer.o: src/Dealer.cpp.o
 
 # target to build an object file
 src/Dealer.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Dealer.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Dealer.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Dealer.cpp.o
 .PHONY : src/Dealer.cpp.o
 
 src/Dealer.i: src/Dealer.cpp.i
@@ -196,7 +232,8 @@ src/Dealer.i: src/Dealer.cpp.i
 
 # target to preprocess a source file
 src/Dealer.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Dealer.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Dealer.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Dealer.cpp.i
 .PHONY : src/Dealer.cpp.i
 
 src/Dealer.s: src/Dealer.cpp.s
@@ -204,7 +241,8 @@ src/Dealer.s: src/Dealer.cpp.s
 
 # target to generate assembly for a file
 src/Dealer.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Dealer.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Dealer.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Dealer.cpp.s
 .PHONY : src/Dealer.cpp.s
 
 src/Decision.o: src/Decision.cpp.o
@@ -212,7 +250,8 @@ src/Decision.o: src/Decision.cpp.o
 
 # target to build an object file
 src/Decision.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Decision.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Decision.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Decision.cpp.o
 .PHONY : src/Decision.cpp.o
 
 src/Decision.i: src/Decision.cpp.i
@@ -220,7 +259,8 @@ src/Decision.i: src/Decision.cpp.i
 
 # target to preprocess a source file
 src/Decision.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Decision.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Decision.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Decision.cpp.i
 .PHONY : src/Decision.cpp.i
 
 src/Decision.s: src/Decision.cpp.s
@@ -228,7 +268,8 @@ src/Decision.s: src/Decision.cpp.s
 
 # target to generate assembly for a file
 src/Decision.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Decision.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Decision.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Decision.cpp.s
 .PHONY : src/Decision.cpp.s
 
 src/Deck.o: src/Deck.cpp.o
@@ -236,7 +277,8 @@ src/Deck.o: src/Deck.cpp.o
 
 # target to build an object file
 src/Deck.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Deck.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Deck.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Deck.cpp.o
 .PHONY : src/Deck.cpp.o
 
 src/Deck.i: src/Deck.cpp.i
@@ -244,7 +286,8 @@ src/Deck.i: src/Deck.cpp.i
 
 # target to preprocess a source file
 src/Deck.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Deck.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Deck.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Deck.cpp.i
 .PHONY : src/Deck.cpp.i
 
 src/Deck.s: src/Deck.cpp.s
@@ -252,7 +295,8 @@ src/Deck.s: src/Deck.cpp.s
 
 # target to generate assembly for a file
 src/Deck.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Deck.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Deck.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Deck.cpp.s
 .PHONY : src/Deck.cpp.s
 
 src/Game.o: src/Game.cpp.o
@@ -260,7 +304,8 @@ src/Game.o: src/Game.cpp.o
 
 # target to build an object file
 src/Game.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Game.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Game.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Game.cpp.o
 .PHONY : src/Game.cpp.o
 
 src/Game.i: src/Game.cpp.i
@@ -268,7 +313,8 @@ src/Game.i: src/Game.cpp.i
 
 # target to preprocess a source file
 src/Game.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Game.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Game.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Game.cpp.i
 .PHONY : src/Game.cpp.i
 
 src/Game.s: src/Game.cpp.s
@@ -276,7 +322,8 @@ src/Game.s: src/Game.cpp.s
 
 # target to generate assembly for a file
 src/Game.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Game.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Game.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
 src/Person.o: src/Person.cpp.o
@@ -284,7 +331,8 @@ src/Person.o: src/Person.cpp.o
 
 # target to build an object file
 src/Person.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person.cpp.o
 .PHONY : src/Person.cpp.o
 
 src/Person.i: src/Person.cpp.i
@@ -292,7 +340,8 @@ src/Person.i: src/Person.cpp.i
 
 # target to preprocess a source file
 src/Person.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person.cpp.i
 .PHONY : src/Person.cpp.i
 
 src/Person.s: src/Person.cpp.s
@@ -300,7 +349,8 @@ src/Person.s: src/Person.cpp.s
 
 # target to generate assembly for a file
 src/Person.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person.cpp.s
 .PHONY : src/Person.cpp.s
 
 src/Person_old.o: src/Person_old.cpp.o
@@ -308,7 +358,8 @@ src/Person_old.o: src/Person_old.cpp.o
 
 # target to build an object file
 src/Person_old.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person_old.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person_old.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person_old.cpp.o
 .PHONY : src/Person_old.cpp.o
 
 src/Person_old.i: src/Person_old.cpp.i
@@ -316,7 +367,8 @@ src/Person_old.i: src/Person_old.cpp.i
 
 # target to preprocess a source file
 src/Person_old.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person_old.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person_old.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person_old.cpp.i
 .PHONY : src/Person_old.cpp.i
 
 src/Person_old.s: src/Person_old.cpp.s
@@ -324,7 +376,8 @@ src/Person_old.s: src/Person_old.cpp.s
 
 # target to generate assembly for a file
 src/Person_old.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Person_old.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Person_old.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Person_old.cpp.s
 .PHONY : src/Person_old.cpp.s
 
 src/Player.o: src/Player.cpp.o
@@ -332,7 +385,8 @@ src/Player.o: src/Player.cpp.o
 
 # target to build an object file
 src/Player.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Player.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Player.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Player.cpp.o
 .PHONY : src/Player.cpp.o
 
 src/Player.i: src/Player.cpp.i
@@ -340,7 +394,8 @@ src/Player.i: src/Player.cpp.i
 
 # target to preprocess a source file
 src/Player.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Player.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Player.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Player.cpp.i
 .PHONY : src/Player.cpp.i
 
 src/Player.s: src/Player.cpp.s
@@ -348,7 +403,8 @@ src/Player.s: src/Player.cpp.s
 
 # target to generate assembly for a file
 src/Player.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Player.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Player.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
 src/Strategy.o: src/Strategy.cpp.o
@@ -356,7 +412,8 @@ src/Strategy.o: src/Strategy.cpp.o
 
 # target to build an object file
 src/Strategy.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Strategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Strategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Strategy.cpp.o
 .PHONY : src/Strategy.cpp.o
 
 src/Strategy.i: src/Strategy.cpp.i
@@ -364,7 +421,8 @@ src/Strategy.i: src/Strategy.cpp.i
 
 # target to preprocess a source file
 src/Strategy.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Strategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Strategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Strategy.cpp.i
 .PHONY : src/Strategy.cpp.i
 
 src/Strategy.s: src/Strategy.cpp.s
@@ -372,7 +430,8 @@ src/Strategy.s: src/Strategy.cpp.s
 
 # target to generate assembly for a file
 src/Strategy.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Strategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Strategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Strategy.cpp.s
 .PHONY : src/Strategy.cpp.s
 
 src/Take17.o: src/Take17.cpp.o
@@ -380,7 +439,8 @@ src/Take17.o: src/Take17.cpp.o
 
 # target to build an object file
 src/Take17.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Take17.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Take17.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Take17.cpp.o
 .PHONY : src/Take17.cpp.o
 
 src/Take17.i: src/Take17.cpp.i
@@ -388,7 +448,8 @@ src/Take17.i: src/Take17.cpp.i
 
 # target to preprocess a source file
 src/Take17.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Take17.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Take17.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Take17.cpp.i
 .PHONY : src/Take17.cpp.i
 
 src/Take17.s: src/Take17.cpp.s
@@ -396,7 +457,8 @@ src/Take17.s: src/Take17.cpp.s
 
 # target to generate assembly for a file
 src/Take17.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/Take17.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/Take17.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/Take17.cpp.s
 .PHONY : src/Take17.cpp.s
 
 src/basic_strategy.o: src/basic_strategy.cpp.o
@@ -404,7 +466,8 @@ src/basic_strategy.o: src/basic_strategy.cpp.o
 
 # target to build an object file
 src/basic_strategy.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/basic_strategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/basic_strategy.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/basic_strategy.cpp.o
 .PHONY : src/basic_strategy.cpp.o
 
 src/basic_strategy.i: src/basic_strategy.cpp.i
@@ -412,7 +475,8 @@ src/basic_strategy.i: src/basic_strategy.cpp.i
 
 # target to preprocess a source file
 src/basic_strategy.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/basic_strategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/basic_strategy.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/basic_strategy.cpp.i
 .PHONY : src/basic_strategy.cpp.i
 
 src/basic_strategy.s: src/basic_strategy.cpp.s
@@ -420,7 +484,8 @@ src/basic_strategy.s: src/basic_strategy.cpp.s
 
 # target to generate assembly for a file
 src/basic_strategy.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/basic_strategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/basic_strategy.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/basic_strategy.cpp.s
 .PHONY : src/basic_strategy.cpp.s
 
 src/decision.o: src/decision.cpp.o
@@ -428,7 +493,8 @@ src/decision.o: src/decision.cpp.o
 
 # target to build an object file
 src/decision.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision.cpp.o
 .PHONY : src/decision.cpp.o
 
 src/decision.i: src/decision.cpp.i
@@ -436,7 +502,8 @@ src/decision.i: src/decision.cpp.i
 
 # target to preprocess a source file
 src/decision.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision.cpp.i
 .PHONY : src/decision.cpp.i
 
 src/decision.s: src/decision.cpp.s
@@ -444,7 +511,8 @@ src/decision.s: src/decision.cpp.s
 
 # target to generate assembly for a file
 src/decision.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision.cpp.s
 .PHONY : src/decision.cpp.s
 
 src/decision_adv.o: src/decision_adv.cpp.o
@@ -452,7 +520,8 @@ src/decision_adv.o: src/decision_adv.cpp.o
 
 # target to build an object file
 src/decision_adv.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision_adv.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision_adv.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision_adv.cpp.o
 .PHONY : src/decision_adv.cpp.o
 
 src/decision_adv.i: src/decision_adv.cpp.i
@@ -460,7 +529,8 @@ src/decision_adv.i: src/decision_adv.cpp.i
 
 # target to preprocess a source file
 src/decision_adv.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision_adv.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision_adv.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision_adv.cpp.i
 .PHONY : src/decision_adv.cpp.i
 
 src/decision_adv.s: src/decision_adv.cpp.s
@@ -468,7 +538,8 @@ src/decision_adv.s: src/decision_adv.cpp.s
 
 # target to generate assembly for a file
 src/decision_adv.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/decision_adv.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/decision_adv.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/decision_adv.cpp.s
 .PHONY : src/decision_adv.cpp.s
 
 src/gambler.o: src/gambler.cpp.o
@@ -476,7 +547,8 @@ src/gambler.o: src/gambler.cpp.o
 
 # target to build an object file
 src/gambler.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/gambler.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/gambler.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/gambler.cpp.o
 .PHONY : src/gambler.cpp.o
 
 src/gambler.i: src/gambler.cpp.i
@@ -484,7 +556,8 @@ src/gambler.i: src/gambler.cpp.i
 
 # target to preprocess a source file
 src/gambler.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/gambler.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/gambler.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/gambler.cpp.i
 .PHONY : src/gambler.cpp.i
 
 src/gambler.s: src/gambler.cpp.s
@@ -492,7 +565,8 @@ src/gambler.s: src/gambler.cpp.s
 
 # target to generate assembly for a file
 src/gambler.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/gambler.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/gambler.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/gambler.cpp.s
 .PHONY : src/gambler.cpp.s
 
 src/game.o: src/game.cpp.o
@@ -500,7 +574,8 @@ src/game.o: src/game.cpp.o
 
 # target to build an object file
 src/game.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/game.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/game.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/game.cpp.o
 .PHONY : src/game.cpp.o
 
 src/game.i: src/game.cpp.i
@@ -508,7 +583,8 @@ src/game.i: src/game.cpp.i
 
 # target to preprocess a source file
 src/game.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/game.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/game.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/game.cpp.i
 .PHONY : src/game.cpp.i
 
 src/game.s: src/game.cpp.s
@@ -516,7 +592,8 @@ src/game.s: src/game.cpp.s
 
 # target to generate assembly for a file
 src/game.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/game.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/game.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
 src/hi_low_i.o: src/hi_low_i.cpp.o
@@ -524,7 +601,8 @@ src/hi_low_i.o: src/hi_low_i.cpp.o
 
 # target to build an object file
 src/hi_low_i.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/hi_low_i.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/hi_low_i.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/hi_low_i.cpp.o
 .PHONY : src/hi_low_i.cpp.o
 
 src/hi_low_i.i: src/hi_low_i.cpp.i
@@ -532,7 +610,8 @@ src/hi_low_i.i: src/hi_low_i.cpp.i
 
 # target to preprocess a source file
 src/hi_low_i.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/hi_low_i.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/hi_low_i.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/hi_low_i.cpp.i
 .PHONY : src/hi_low_i.cpp.i
 
 src/hi_low_i.s: src/hi_low_i.cpp.s
@@ -540,15 +619,41 @@ src/hi_low_i.s: src/hi_low_i.cpp.s
 
 # target to generate assembly for a file
 src/hi_low_i.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/hi_low_i.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/hi_low_i.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/hi_low_i.cpp.s
 .PHONY : src/hi_low_i.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/player.o: src/player.cpp.o
 .PHONY : src/player.o
 
 # target to build an object file
 src/player.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player.cpp.o
 .PHONY : src/player.cpp.o
 
 src/player.i: src/player.cpp.i
@@ -556,7 +661,8 @@ src/player.i: src/player.cpp.i
 
 # target to preprocess a source file
 src/player.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player.cpp.i
 .PHONY : src/player.cpp.i
 
 src/player.s: src/player.cpp.s
@@ -564,7 +670,8 @@ src/player.s: src/player.cpp.s
 
 # target to generate assembly for a file
 src/player.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
 src/player_test.o: src/player_test.cpp.o
@@ -572,7 +679,8 @@ src/player_test.o: src/player_test.cpp.o
 
 # target to build an object file
 src/player_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player_test.cpp.o
 .PHONY : src/player_test.cpp.o
 
 src/player_test.i: src/player_test.cpp.i
@@ -580,7 +688,8 @@ src/player_test.i: src/player_test.cpp.i
 
 # target to preprocess a source file
 src/player_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player_test.cpp.i
 .PHONY : src/player_test.cpp.i
 
 src/player_test.s: src/player_test.cpp.s
@@ -588,7 +697,8 @@ src/player_test.s: src/player_test.cpp.s
 
 # target to generate assembly for a file
 src/player_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/src/player_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/black_jack.dir/build.make CMakeFiles/bin/black_jack.dir/src/player_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/src/player_test.cpp.s
 .PHONY : src/player_test.cpp.s
 
 test/BasicStrategy_test.o: test/BasicStrategy_test.cpp.o
@@ -596,7 +706,7 @@ test/BasicStrategy_test.o: test/BasicStrategy_test.cpp.o
 
 # target to build an object file
 test/BasicStrategy_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/BasicStrategy_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/BasicStrategy_test.cpp.o
 .PHONY : test/BasicStrategy_test.cpp.o
 
 test/BasicStrategy_test.i: test/BasicStrategy_test.cpp.i
@@ -604,7 +714,7 @@ test/BasicStrategy_test.i: test/BasicStrategy_test.cpp.i
 
 # target to preprocess a source file
 test/BasicStrategy_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/BasicStrategy_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/BasicStrategy_test.cpp.i
 .PHONY : test/BasicStrategy_test.cpp.i
 
 test/BasicStrategy_test.s: test/BasicStrategy_test.cpp.s
@@ -612,7 +722,7 @@ test/BasicStrategy_test.s: test/BasicStrategy_test.cpp.s
 
 # target to generate assembly for a file
 test/BasicStrategy_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/BasicStrategy_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/BasicStrategy_test.cpp.s
 .PHONY : test/BasicStrategy_test.cpp.s
 
 test/Box_test.o: test/Box_test.cpp.o
@@ -620,7 +730,7 @@ test/Box_test.o: test/Box_test.cpp.o
 
 # target to build an object file
 test/Box_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Box_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Box_test.cpp.o
 .PHONY : test/Box_test.cpp.o
 
 test/Box_test.i: test/Box_test.cpp.i
@@ -628,7 +738,7 @@ test/Box_test.i: test/Box_test.cpp.i
 
 # target to preprocess a source file
 test/Box_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Box_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Box_test.cpp.i
 .PHONY : test/Box_test.cpp.i
 
 test/Box_test.s: test/Box_test.cpp.s
@@ -636,7 +746,7 @@ test/Box_test.s: test/Box_test.cpp.s
 
 # target to generate assembly for a file
 test/Box_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Box_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Box_test.cpp.s
 .PHONY : test/Box_test.cpp.s
 
 test/Card_test.o: test/Card_test.cpp.o
@@ -644,7 +754,7 @@ test/Card_test.o: test/Card_test.cpp.o
 
 # target to build an object file
 test/Card_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Card_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Card_test.cpp.o
 .PHONY : test/Card_test.cpp.o
 
 test/Card_test.i: test/Card_test.cpp.i
@@ -652,7 +762,7 @@ test/Card_test.i: test/Card_test.cpp.i
 
 # target to preprocess a source file
 test/Card_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Card_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Card_test.cpp.i
 .PHONY : test/Card_test.cpp.i
 
 test/Card_test.s: test/Card_test.cpp.s
@@ -660,7 +770,7 @@ test/Card_test.s: test/Card_test.cpp.s
 
 # target to generate assembly for a file
 test/Card_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Card_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Card_test.cpp.s
 .PHONY : test/Card_test.cpp.s
 
 test/Dealer_test.o: test/Dealer_test.cpp.o
@@ -668,7 +778,7 @@ test/Dealer_test.o: test/Dealer_test.cpp.o
 
 # target to build an object file
 test/Dealer_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Dealer_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Dealer_test.cpp.o
 .PHONY : test/Dealer_test.cpp.o
 
 test/Dealer_test.i: test/Dealer_test.cpp.i
@@ -676,7 +786,7 @@ test/Dealer_test.i: test/Dealer_test.cpp.i
 
 # target to preprocess a source file
 test/Dealer_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Dealer_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Dealer_test.cpp.i
 .PHONY : test/Dealer_test.cpp.i
 
 test/Dealer_test.s: test/Dealer_test.cpp.s
@@ -684,7 +794,7 @@ test/Dealer_test.s: test/Dealer_test.cpp.s
 
 # target to generate assembly for a file
 test/Dealer_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Dealer_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Dealer_test.cpp.s
 .PHONY : test/Dealer_test.cpp.s
 
 test/Decision_test.o: test/Decision_test.cpp.o
@@ -692,7 +802,7 @@ test/Decision_test.o: test/Decision_test.cpp.o
 
 # target to build an object file
 test/Decision_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Decision_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Decision_test.cpp.o
 .PHONY : test/Decision_test.cpp.o
 
 test/Decision_test.i: test/Decision_test.cpp.i
@@ -700,7 +810,7 @@ test/Decision_test.i: test/Decision_test.cpp.i
 
 # target to preprocess a source file
 test/Decision_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Decision_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Decision_test.cpp.i
 .PHONY : test/Decision_test.cpp.i
 
 test/Decision_test.s: test/Decision_test.cpp.s
@@ -708,7 +818,7 @@ test/Decision_test.s: test/Decision_test.cpp.s
 
 # target to generate assembly for a file
 test/Decision_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Decision_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Decision_test.cpp.s
 .PHONY : test/Decision_test.cpp.s
 
 test/Deck_test.o: test/Deck_test.cpp.o
@@ -716,7 +826,7 @@ test/Deck_test.o: test/Deck_test.cpp.o
 
 # target to build an object file
 test/Deck_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Deck_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Deck_test.cpp.o
 .PHONY : test/Deck_test.cpp.o
 
 test/Deck_test.i: test/Deck_test.cpp.i
@@ -724,7 +834,7 @@ test/Deck_test.i: test/Deck_test.cpp.i
 
 # target to preprocess a source file
 test/Deck_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Deck_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Deck_test.cpp.i
 .PHONY : test/Deck_test.cpp.i
 
 test/Deck_test.s: test/Deck_test.cpp.s
@@ -732,7 +842,7 @@ test/Deck_test.s: test/Deck_test.cpp.s
 
 # target to generate assembly for a file
 test/Deck_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Deck_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Deck_test.cpp.s
 .PHONY : test/Deck_test.cpp.s
 
 test/Game_test.o: test/Game_test.cpp.o
@@ -740,7 +850,7 @@ test/Game_test.o: test/Game_test.cpp.o
 
 # target to build an object file
 test/Game_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Game_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Game_test.cpp.o
 .PHONY : test/Game_test.cpp.o
 
 test/Game_test.i: test/Game_test.cpp.i
@@ -748,7 +858,7 @@ test/Game_test.i: test/Game_test.cpp.i
 
 # target to preprocess a source file
 test/Game_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Game_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Game_test.cpp.i
 .PHONY : test/Game_test.cpp.i
 
 test/Game_test.s: test/Game_test.cpp.s
@@ -756,7 +866,7 @@ test/Game_test.s: test/Game_test.cpp.s
 
 # target to generate assembly for a file
 test/Game_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Game_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Game_test.cpp.s
 .PHONY : test/Game_test.cpp.s
 
 test/Person_old_test.o: test/Person_old_test.cpp.o
@@ -764,7 +874,7 @@ test/Person_old_test.o: test/Person_old_test.cpp.o
 
 # target to build an object file
 test/Person_old_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_old_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_old_test.cpp.o
 .PHONY : test/Person_old_test.cpp.o
 
 test/Person_old_test.i: test/Person_old_test.cpp.i
@@ -772,7 +882,7 @@ test/Person_old_test.i: test/Person_old_test.cpp.i
 
 # target to preprocess a source file
 test/Person_old_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_old_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_old_test.cpp.i
 .PHONY : test/Person_old_test.cpp.i
 
 test/Person_old_test.s: test/Person_old_test.cpp.s
@@ -780,7 +890,7 @@ test/Person_old_test.s: test/Person_old_test.cpp.s
 
 # target to generate assembly for a file
 test/Person_old_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_old_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_old_test.cpp.s
 .PHONY : test/Person_old_test.cpp.s
 
 test/Person_test.o: test/Person_test.cpp.o
@@ -788,7 +898,7 @@ test/Person_test.o: test/Person_test.cpp.o
 
 # target to build an object file
 test/Person_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_test.cpp.o
 .PHONY : test/Person_test.cpp.o
 
 test/Person_test.i: test/Person_test.cpp.i
@@ -796,7 +906,7 @@ test/Person_test.i: test/Person_test.cpp.i
 
 # target to preprocess a source file
 test/Person_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_test.cpp.i
 .PHONY : test/Person_test.cpp.i
 
 test/Person_test.s: test/Person_test.cpp.s
@@ -804,7 +914,7 @@ test/Person_test.s: test/Person_test.cpp.s
 
 # target to generate assembly for a file
 test/Person_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Person_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Person_test.cpp.s
 .PHONY : test/Person_test.cpp.s
 
 test/Player_test.o: test/Player_test.cpp.o
@@ -812,7 +922,7 @@ test/Player_test.o: test/Player_test.cpp.o
 
 # target to build an object file
 test/Player_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Player_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Player_test.cpp.o
 .PHONY : test/Player_test.cpp.o
 
 test/Player_test.i: test/Player_test.cpp.i
@@ -820,7 +930,7 @@ test/Player_test.i: test/Player_test.cpp.i
 
 # target to preprocess a source file
 test/Player_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Player_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Player_test.cpp.i
 .PHONY : test/Player_test.cpp.i
 
 test/Player_test.s: test/Player_test.cpp.s
@@ -828,7 +938,7 @@ test/Player_test.s: test/Player_test.cpp.s
 
 # target to generate assembly for a file
 test/Player_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Player_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Player_test.cpp.s
 .PHONY : test/Player_test.cpp.s
 
 test/Strategy_test.o: test/Strategy_test.cpp.o
@@ -836,7 +946,7 @@ test/Strategy_test.o: test/Strategy_test.cpp.o
 
 # target to build an object file
 test/Strategy_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Strategy_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Strategy_test.cpp.o
 .PHONY : test/Strategy_test.cpp.o
 
 test/Strategy_test.i: test/Strategy_test.cpp.i
@@ -844,7 +954,7 @@ test/Strategy_test.i: test/Strategy_test.cpp.i
 
 # target to preprocess a source file
 test/Strategy_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Strategy_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Strategy_test.cpp.i
 .PHONY : test/Strategy_test.cpp.i
 
 test/Strategy_test.s: test/Strategy_test.cpp.s
@@ -852,7 +962,7 @@ test/Strategy_test.s: test/Strategy_test.cpp.s
 
 # target to generate assembly for a file
 test/Strategy_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Strategy_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Strategy_test.cpp.s
 .PHONY : test/Strategy_test.cpp.s
 
 test/Take17_test.o: test/Take17_test.cpp.o
@@ -860,7 +970,7 @@ test/Take17_test.o: test/Take17_test.cpp.o
 
 # target to build an object file
 test/Take17_test.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Take17_test.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Take17_test.cpp.o
 .PHONY : test/Take17_test.cpp.o
 
 test/Take17_test.i: test/Take17_test.cpp.i
@@ -868,7 +978,7 @@ test/Take17_test.i: test/Take17_test.cpp.i
 
 # target to preprocess a source file
 test/Take17_test.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Take17_test.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Take17_test.cpp.i
 .PHONY : test/Take17_test.cpp.i
 
 test/Take17_test.s: test/Take17_test.cpp.s
@@ -876,7 +986,7 @@ test/Take17_test.s: test/Take17_test.cpp.s
 
 # target to generate assembly for a file
 test/Take17_test.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/Take17_test.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/Take17_test.cpp.s
 .PHONY : test/Take17_test.cpp.s
 
 test/main.o: test/main.cpp.o
@@ -884,7 +994,7 @@ test/main.o: test/main.cpp.o
 
 # target to build an object file
 test/main.cpp.o:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/main.cpp.o
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/main.cpp.o
 .PHONY : test/main.cpp.o
 
 test/main.i: test/main.cpp.i
@@ -892,7 +1002,7 @@ test/main.i: test/main.cpp.i
 
 # target to preprocess a source file
 test/main.cpp.i:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/main.cpp.i
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/main.cpp.i
 .PHONY : test/main.cpp.i
 
 test/main.s: test/main.cpp.s
@@ -900,7 +1010,7 @@ test/main.s: test/main.cpp.s
 
 # target to generate assembly for a file
 test/main.cpp.s:
-	$(MAKE) -f CMakeFiles/black_jack.dir/build.make CMakeFiles/black_jack.dir/test/main.cpp.s
+	$(MAKE) -f CMakeFiles/bin/test.dir/build.make CMakeFiles/bin/test.dir/test/main.cpp.s
 .PHONY : test/main.cpp.s
 
 # Help Target
@@ -909,9 +1019,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... black_jack"
+	@echo "... bin/black_jack"
+	@echo "... bin/test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... src/BasicStrategy.o"
 	@echo "... src/BasicStrategy.i"
 	@echo "... src/BasicStrategy.s"
@@ -966,6 +1078,9 @@ help:
 	@echo "... src/hi_low_i.o"
 	@echo "... src/hi_low_i.i"
 	@echo "... src/hi_low_i.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"

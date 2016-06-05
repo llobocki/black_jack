@@ -51,18 +51,15 @@ void Box::card(const Card card, int bet) {
   if (bet > 0)
     _bet += bet;
   _box.push(card);
-  if (card.get_value() == 1) {
-    if (_ace == false) {
-      _ace = true;
-      _soft_ace = true;
-      _value += card_value(card.get_value());
-    }
+  if (soft_ace() == true && card_value(card.get_value()) + get_value() > 21) {
+    _soft_ace = false;
   }
-  // if (_soft_ace == true && _value + card_value(card.get_value()) > 21){
-  // 	_value -= 10;
-  // 	_soft_ace = false;
-  // }
-  else
+
+  if (card.get_value() == 1 && _soft_ace == false && _ace == false) {
+    _ace = true;
+    _soft_ace = true;
+    _value += card_value(card.get_value());
+  } else
     _value += card_value(card.get_value());
 }
 

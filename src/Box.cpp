@@ -5,7 +5,6 @@ Box::Box() {
   _bet = 0;
   _value = 0;
   _ace = false;
-  _another_aces = false;
   _soft_ace = false;
   _split = false;
   // TODO Auto-generated constructor stub
@@ -34,7 +33,6 @@ Box::Box(const int bet) {
   _bet = bet;
   _value = 0;
   _ace = false;
-  _another_aces = false;
   _soft_ace = false;
   _split = false;
 }
@@ -46,7 +44,6 @@ Box::Box(const int bet, const Card card, const bool split) {
   _value = card_value(card.get_value());
   _ace = false;
   _soft_ace = false;
-  _another_aces = false;
   _split = split;
 }
 
@@ -59,10 +56,7 @@ void Box::card(const Card card, int bet) {
       _ace = true;
       _soft_ace = true;
       _value += card_value(card.get_value());
-    } else if (_another_aces == false) {
-      _another_aces = true;
     }
-
   }
   // if (_soft_ace == true && _value + card_value(card.get_value()) > 21){
   // 	_value -= 10;

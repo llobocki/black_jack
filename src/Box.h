@@ -6,35 +6,35 @@
 
 class Box {
 private:
-	std::stack<Card> _box;
-	int _bet;
-	int _value;
-	bool _ace;
-	bool _another_aces;
-	bool _soft_ace;
-	bool _split;
+  std::stack<Card> _box;
+  int _bet;
+  int _value;
+  bool _ace;
+  bool _soft_ace;
+  bool _split;
 
 public:
-	Box();
-	Box(const int bet);
-	Box(const int bet, const Card card, const bool split);
+  Box();
+  Box(const int bet);
+  Box(const int bet, const Card card, const bool split);
 
-	virtual ~Box();
+  virtual ~Box();
 
-	void card(const Card card, int bet=0);
+  void card(const Card card, int bet = 0);
 
-	int get_bet() const;
-	int get_value() const;
-	int size_box() const;
-	bool black_jack() const;
-	bool split() const;
-	bool can_split(int split_counter) const;
-	void set_split();
-	Card split_card();
+  int get_bet() const;
+  int get_value() const;
+  int size_box() const;
+  bool black_jack() const;
+  bool split() const;
+  bool can_split(int split_counter) const;
+  void set_split();
+  Card split_card();
 
-	bool soft_ace() const;
+  bool soft_ace() const;
+
 private:
-	int card_value(int value) const;
+  int card_value(int value) const;
 };
 
 #endif /* BOX_H_ */

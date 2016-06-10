@@ -85,6 +85,39 @@ SUITE(BasicStrategy) {
     CHECK_EQUAL(Decision::split, basic_strategy->decission(box, 8));
   }
 
+  TEST(BasicSTrategySoftAceCard) {
+    Box box = Box(10);
+    Card card_1 = Card(Card::Colour(1), Card::Value(1));
+    Card card_2 = Card(Card::Colour(1), Card::Value(7));
+    box.card(card_1);
+    box.card(card_2);
+
+    Strategy *basic_strategy = new BasicStrategy();
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+  }
+
+  TEST(BasicSTrategySoftAceNoCard) {
+    Box box = Box(10);
+    Card card_1 = Card(Card::Colour(1), Card::Value(1));
+    Card card_2 = Card(Card::Colour(1), Card::Value(9));
+    box.card(card_1);
+    box.card(card_2);
+
+    Strategy *basic_strategy = new BasicStrategy();
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 10));
+  }
+
+  TEST(BasicSTrategySoftAceDouble) {
+    Box box = Box(10);
+    Card card_1 = Card(Card::Colour(1), Card::Value(1));
+    Card card_2 = Card(Card::Colour(1), Card::Value(7));
+    box.card(card_1);
+    box.card(card_2);
+
+    Strategy *basic_strategy = new BasicStrategy();
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+  }
+
   TEST(BasicSTrategy_surrender) {
     Box box = Box(10);
     Card card_1 = Card(Card::Colour(1), Card::Value(10));

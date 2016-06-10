@@ -88,7 +88,9 @@ Decision BasicStrategy::decission(const Box my_box, const int rival_value,
 
   if (my_box.can_split(split_counter))
     return tab_split[my_box.get_value() / 2 - 1][rival_value - 2];
-  else {
+  else if (my_box.soft_ace()) {
+    return tab_soft_ace[my_box.get_value() - 13][rival_value - 2];
+  } else {
     auto dec = tab_normal[my_box.get_value() - 5][rival_value - 2];
     if (dec == surrender && surrender_card == false)
       return Decision(card);

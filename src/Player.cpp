@@ -100,10 +100,6 @@ void Player::play(Deck &deck, int rival_value) {
       ++box;
     }
   }
-  //	for (auto& box : _boxes) {
-  //		while (_strategy->decission(box))
-  //			box.card(deck.get_card());
-  //	}
 }
 
 void Player::surrender(int rival_value) {

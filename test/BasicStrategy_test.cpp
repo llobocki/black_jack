@@ -160,10 +160,80 @@ SUITE(BasicStrategy) {
     CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
   }
 
-  TEST(soft_ace_one_row) {
+  TEST(soft_ace_all_rows) {
     Strategy *basic_strategy = new BasicStrategy();
-    Box box = Box(10);
 
+    Box box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(3)));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(3)));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(4)));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(5)));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(6)));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::double_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
     box.card(Card(Card::Colour(1), Card::Value(1)));
     box.card(Card(Card::Colour(1), Card::Value(7)));
     CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 2));
@@ -176,5 +246,33 @@ SUITE(BasicStrategy) {
     CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 9));
     CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 10));
     CHECK_EQUAL(Decision::card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(8)));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 11));
+
+    box = Box(10);
+    box.card(Card(Card::Colour(1), Card::Value(1)));
+    box.card(Card(Card::Colour(1), Card::Value(9)));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 2));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 3));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 4));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 5));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 6));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 7));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 8));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 9));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 10));
+    CHECK_EQUAL(Decision::no_card, basic_strategy->decission(box, 11));
   }
 }

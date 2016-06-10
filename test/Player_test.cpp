@@ -283,4 +283,26 @@ SUITE(Player) {
     CHECK_EQUAL(10, player.get_bankroll());
     player.reset();
   }
+
+  TEST(Player_surrender) {
+    Strategy *basic_strategy = new BasicStrategy();
+    Player player = Player(basic_strategy, 1, 10);
+    player.init_boxes();
+    CHECK_EQUAL(1, player.get_size());
+
+    std::stack<Card> cards;
+    cards.push(Card(Card::Colour(1), Card::Value(10)));
+    cards.push(Card(Card::Colour(1), Card::Value(6)));
+    Deck deck = Deck(cards);
+
+    player.one_card(deck);
+    player.one_card(deck);
+    CHECK_EQUAL(-10, player.get_bankroll());
+    player.play(deck, 10);
+    player.scores(12, false);
+    CHECK_EQUAL(0, deck.size());
+    CHECK_EQUAL(0, player.get_size());
+    CHECK_EQUAL(-5, player.get_bankroll());
+    player.reset();
+  }
 }

@@ -73,7 +73,8 @@ bool Box::black_jack() const {
 
 bool Box::can_split(int split_counter) const {
   return (split_counter < 3) &&
-                 _value % card_value((_box.top()).get_value()) == 0
+                 (_value - card_value((_box.top()).get_value())) ==
+                     card_value((_box.top()).get_value())
              ? true
              : false;
 }

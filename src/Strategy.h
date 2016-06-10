@@ -6,13 +6,15 @@
 
 class Strategy {
 public:
+  virtual ~Strategy();
 
-	virtual ~Strategy();
+  virtual Decision decission(const Box my_box, const int rival_value = 0,
+                             const int split_counter = 0,
+                             const int card_counter = 0,
+                             const bool surrender_card = false) = 0;
 
-	virtual Decision decission(const Box my_box, const int rival_value=0, const int split_counter=0,
-			const int card_counter=0)=0;
 protected:
-	Strategy();
+  Strategy();
 };
 
 #endif /* STRATEGY_H_ */

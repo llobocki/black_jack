@@ -298,6 +298,7 @@ SUITE(Player) {
     player.one_card(deck);
     player.one_card(deck);
     CHECK_EQUAL(-10, player.get_bankroll());
+    player.surrender(10);
     player.play(deck, 10);
     player.scores(12, false);
     CHECK_EQUAL(0, deck.size());

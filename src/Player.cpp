@@ -106,6 +106,22 @@ void Player::play(Deck &deck, int rival_value) {
   //	}
 }
 
+void Player::surrender(int rival_value) {
+  auto box = _boxes.begin();
+  while (box != _boxes.end()) {
+    if (!(*box).black_jack()) {
+      Decision decision =
+          _strategy->decission(*box, rival_value, _split_counter, 0, true);
+      if (decision == Decision::surrender) {
+        _bankroll += (*box).get_bet() / 2;
+        box = _boxes.erase(box);
+      } else
+        ++box;
+    } else
+      ++box;
+  }
+}
+
 int Player::get_bankroll() const { return _bankroll; }
 
 void Player::scores(int dealer_value, bool dealer_black_jack) {

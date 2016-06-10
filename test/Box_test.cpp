@@ -81,7 +81,6 @@ SUITE(Box) {
       // CHECK_EQUAL([](Card c) {return c.get_value() < 10 ? false: true;}(
       // 				second),box.black_jack());
       first = box.split_card();
-      box.set_split();
       CHECK_EQUAL(
           [](Card c) { return c.get_value() < 10 ? c.get_value() : 10; }(first),
           box.get_value());

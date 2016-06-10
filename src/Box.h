@@ -28,7 +28,6 @@ public:
   bool black_jack() const;
   bool split() const;
   bool can_split(int split_counter) const;
-  void set_split();
   Card split_card();
 
   bool soft_ace() const;

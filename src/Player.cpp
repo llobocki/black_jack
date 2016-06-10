@@ -35,7 +35,6 @@ void Player::init_boxes() {
 }
 
 void Player::one_card(Deck &deck) {
-  // std::cout << "bbbbbbbbbbbbbbbb\n";
   for (auto &box : _boxes) {
     box.card(deck.get_card());
   }

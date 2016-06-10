@@ -17,14 +17,18 @@ Box::Box(const int bet) {
   _split = false;
 }
 
-// dopisanie splita asów
 Box::Box(const int bet, const Card card, const bool split) {
   _box.push(card);
   _bet = bet;
   _value = card_value(card.get_value());
-  _ace = false;
-  _soft_ace = false;
   _split = split;
+  if (card.get_value() == 1) {
+    _ace = true;
+    _soft_ace = true;
+  } else {
+    _ace = false;
+    _soft_ace = false;
+  }
 }
 
 Box::~Box() {
@@ -62,7 +66,9 @@ void Box::card(const Card card, int bet) {
 }
 
 bool Box::black_jack() const {
-  return _box.size() == 2 && _value == 11 && _ace == true ? true : false;
+  return _box.size() == 2 && _value == 11 && _ace == true && _split == false
+             ? true
+             : false;
 }
 
 bool Box::can_split(int split_counter) const {

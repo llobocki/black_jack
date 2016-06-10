@@ -35,7 +35,7 @@ public:
 
   void scores(int dealer_value, bool dealer_black_jack);
 
-  //	void play(Deck deck);
+  void print_boxes();
 };
 
 #endif /* PLAYER_H_ */

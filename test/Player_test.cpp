@@ -299,11 +299,39 @@ SUITE(Player) {
     player.one_card(deck);
     CHECK_EQUAL(-10, player.get_bankroll());
     player.surrender(10);
+    CHECK_EQUAL(0, player.get_size());
     player.play(deck, 10);
     player.scores(12, false);
     CHECK_EQUAL(0, deck.size());
     CHECK_EQUAL(0, player.get_size());
     CHECK_EQUAL(-5, player.get_bankroll());
+    player.reset();
+  }
+
+  TEST(Player_dealer_11) {
+    Strategy *basic_strategy = new BasicStrategy();
+    Player player = Player(basic_strategy, 2, 10);
+    player.init_boxes();
+
+    std::stack<Card> cards;
+    cards.push(Card(Card::Colour(1), Card::Value(5)));
+    cards.push(Card(Card::Colour(1), Card::Value(1)));
+    cards.push(Card(Card::Colour(1), Card::Value(10)));
+    cards.push(Card(Card::Colour(1), Card::Value(10)));
+    cards.push(Card(Card::Colour(1), Card::Value(6)));
+    Deck deck = Deck(cards);
+
+    player.one_card(deck);
+    player.one_card(deck);
+    player.surrender(11);
+    CHECK_EQUAL(-20, player.get_bankroll());
+    CHECK_EQUAL(2, player.get_size());
+    CHECK_EQUAL(1, deck.size());
+    player.play(deck, 11);
+    player.scores(21, true);
+    CHECK_EQUAL(0, deck.size());
+    CHECK_EQUAL(2, player.get_size());
+    CHECK_EQUAL(-10, player.get_bankroll());
     player.reset();
   }
 }

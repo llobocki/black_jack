@@ -59,16 +59,17 @@ void Player::play(Deck &deck, int rival_value) {
       Decision decision =
           _strategy->decission(*box, rival_value, _split_counter);
 
-      while (decision != Decision::no_card) {
+      while ((*box).get_value() < 21 && decision != Decision::no_card) {
         if (decision == Decision::double_card) {
           int bet = (*box).get_bet();
           _bankroll -= bet;
           (*box).card(deck.get_card(), bet);
           decision = Decision::no_card;
         } else {
-          if (decision == Decision::card)
+          if (decision == Decision::card) {
             (*box).card(deck.get_card());
-          else if (decision == Decision::split) {
+
+          } else if (decision == Decision::split) {
             int bet = (*box).get_bet();
             _bankroll -= bet;
             _split_counter++;
@@ -107,18 +108,20 @@ void Player::play(Deck &deck, int rival_value) {
 }
 
 void Player::surrender(int rival_value) {
-  auto box = _boxes.begin();
-  while (box != _boxes.end()) {
-    if (!(*box).black_jack()) {
-      Decision decision =
-          _strategy->decission(*box, rival_value, _split_counter, 0, true);
-      if (decision == Decision::surrender) {
-        _bankroll += (*box).get_bet() / 2;
-        box = _boxes.erase(box);
+  if (rival_value != 11) {
+    auto box = _boxes.begin();
+    while (box != _boxes.end()) {
+      if (!(*box).black_jack()) {
+        Decision decision =
+            _strategy->decission(*box, rival_value, _split_counter, 0, true);
+        if (decision == Decision::surrender) {
+          _bankroll += (*box).get_bet() / 2;
+          box = _boxes.erase(box);
+        } else
+          ++box;
       } else
         ++box;
-    } else
-      ++box;
+    }
   }
 }
 
@@ -137,5 +140,9 @@ void Player::scores(int dealer_value, bool dealer_black_jack) {
       _bankroll += box.get_bet();
   }
 }
-// void Player::play(Deck deck) {
-//}
+
+void Player::print_boxes() {
+  for (auto &box : _boxes) {
+    printf("%i\n", box.get_value());
+  }
+}

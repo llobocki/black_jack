@@ -242,6 +242,7 @@ SUITE(Player) {
     std::stack<Card> cards;
     cards.push(Card(Card::Colour(1), Card::Value(8)));
     cards.push(Card(Card::Colour(1), Card::Value(8)));
+    cards.push(Card(Card::Colour(1), Card::Value(8)));
     cards.push(Card(Card::Colour(1), Card::Value(10)));
     cards.push(Card(Card::Colour(1), Card::Value(9)));
     cards.push(Card(Card::Colour(1), Card::Value(9)));
@@ -256,7 +257,7 @@ SUITE(Player) {
     player.scores(18, false);
     CHECK_EQUAL(4, player.get_size());
     CHECK_EQUAL(-10, player.get_bankroll());
-    CHECK_EQUAL(0, deck.size());
+    CHECK_EQUAL(1, deck.size());
     player.reset();
   }
 

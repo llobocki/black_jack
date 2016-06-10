@@ -49,11 +49,10 @@ void Player::play(Deck &deck, int rival_value) {
   auto box = _boxes.begin();
   while (box != _boxes.end()) {
     if (!(*box).black_jack()) {
-      if ((*box).size_box() == 1) {
+      if ((*box).split()) {
         _split_counter++;
         (*box).card(deck.get_card());
-      }
-      if (!(*box).split()) {
+      } else {
         _split_counter = 0;
       }
       Decision decision =

@@ -34,6 +34,7 @@ set( black_jack_src
   src/Box.cpp
   src/Deck.cpp
   src/game.cpp
+  src/CardCounter.cpp
 )
 
 set(black_jack_test_main

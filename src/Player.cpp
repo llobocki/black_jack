@@ -103,7 +103,7 @@ void Player::play(Deck &deck, int rival_value) {
 }
 
 void Player::surrender(int rival_value) {
-  if (rival_value != 11) {
+  if (rival_value < 11) {
     auto box = _boxes.begin();
     while (box != _boxes.end()) {
       if (!(*box).black_jack()) {

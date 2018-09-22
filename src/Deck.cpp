@@ -45,8 +45,9 @@ Card Deck::get_card() {
     Card card = _deck.top();
     _deck.pop();
     return card;
-  } else
-    throw std::out_of_range("deck is empty\n");
+  }
+   // else
+   //  throw std::out_of_range("deck is empty\n");
 }
 
 Deck::Deck(std::stack<Card> cards) { _deck = cards; }
